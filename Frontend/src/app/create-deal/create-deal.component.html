@@ -1,4 +1,3 @@
-
 <div class="container">
 
   <div class="panel-group">
@@ -8,7 +7,59 @@
     <div class="panel panel-primary">
       <div class="panel-body">Panel Content</div>
     </div>
-  </div>
 
+    <div>
+      <form >
+        <div >
+          CarType:
+          <select>
+            <option value="">-- Rental Purpose --</option>
+            <option value="Travel">Travel</option>
+            <option value="Cargo">Cargo</option>
+            <option value="Business">Business</option>
+          </select>
+        </div>
+
+        <div>
+          Departure:
+          <select>
+            <option value="">-- From --</option>
+            <option value="Fairfield">Fairfield</option>
+            <option value="Ottumwa">Ottumwa</option>
+            <option value="Iowa City">Iowa City</option>
+            <option value="Burlinton">Burlinton</option>
+          </select>
+        </div>
+
+        <div>
+          Destination:
+          <select>
+            <option value="">-- To --</option>
+            <option value="Des Moines">Des Moines</option>
+            <option value="Chicago">Chicago</option>
+            <option value="New York">New York</option>
+          </select>
+        </div>
+
+        <div>
+          Departure Date:
+          <input type="text">
+        </div>
+
+        <div>
+          Phone-Number:
+          <input type="text"> - <input type="text"> - <input type="text">
+        </div>
+
+        <div>
+          <input type="button" value="OK" (click)="$event"/>
+          <input type="button" value="Cancle"/>
+        </div>
+
+
+      </form>
+    </div>
+
+  </div>
 
 </div>
