@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CarRental": {
+    "Carrental-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/CarRental",
+            "outputPath": "dist/Carrental-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,9 +23,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -57,18 +60,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "CarRental:build"
+            "browserTarget": "Carrental-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "CarRental:build:production"
+              "browserTarget": "Carrental-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CarRental:build"
+            "browserTarget": "Carrental-app:build"
           }
         },
         "test": {
@@ -102,7 +105,7 @@
         }
       }
     },
-    "CarRental-e2e": {
+    "Carrental-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +114,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "CarRental:serve"
+            "devServerTarget": "Carrental-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "CarRental:serve:production"
+              "devServerTarget": "Carrental-app:serve:production"
             }
           }
         },
@@ -131,5 +134,5 @@
       }
     }
   },
-  "defaultProject": "CarRental"
+  "defaultProject": "Carrental-app"
 }
