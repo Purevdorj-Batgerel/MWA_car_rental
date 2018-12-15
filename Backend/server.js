@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 
+
+var location = require('./models/Location');
+
 require('dotenv').config()
 
 const path = require('path'); //node core module
@@ -25,12 +28,16 @@ mongoose
     })
     .then(() => {
         console.log('MongoDB Connected')
+        
     })
     .catch(err => {
         console.error(err);
     })
 
 /* ROUTES */
-app.use(require('./routes/user'));
+app.use('/api/user',require('./routes/user'));
+app.use("/",require('./routes/carDeal'));
+
+
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
