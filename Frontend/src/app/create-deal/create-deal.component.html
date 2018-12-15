@@ -9,20 +9,23 @@
     </div>
 
     <div>
-      <form >
-        <div >
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="clientRequist">
           CarType:
-          <select>
+          <select [formControlName]="CarType">
             <option value="">-- Rental Purpose --</option>
             <option value="Travel">Travel</option>
             <option value="Cargo">Cargo</option>
-            <option value="Business">Business</option>
+            <option value="Business">Business
           </select>
+          <div *ngIf="!myForm.get('ClientRequest').get('CarType').valid">
+
+          </div>
         </div>
 
         <div>
           Departure:
-          <select>
+          <select [formControlName]="Departure">
             <option value="">-- From --</option>
             <option value="Fairfield">Fairfield</option>
             <option value="Ottumwa">Ottumwa</option>
@@ -33,7 +36,7 @@
 
         <div>
           Destination:
-          <select>
+          <select [formControlName]="Destination">
             <option value="">-- To --</option>
             <option value="Des Moines">Des Moines</option>
             <option value="Chicago">Chicago</option>
@@ -43,17 +46,18 @@
 
         <div>
           Departure Date:
-          <input type="text">
+          <input type="text" [formControlName]="Date">
         </div>
 
         <div>
           Phone-Number:
-          <input type="text"> - <input type="text"> - <input type="text">
+          <input type="text" [formControlName]="pre"> - <input type="text" [formControlName]="mid"> - <input type="text" [formControlName]="last">
+
         </div>
 
         <div>
-          <input type="button" value="OK" (click)="$event"/>
-          <input type="button" value="Cancle"/>
+          <button type="button" value="OK" [disabled]="!myForm.valid">OK</button>
+          <button type="button" value="Cancle">Cancle</button>
         </div>
 
 
