@@ -1,7 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
 const logger = require('morgan');
+
+require('dotenv').config()
+
+const path = require('path'); //node core module
+
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -14,6 +18,7 @@ app.use(express.urlencoded({
     extended: false
 }));
 
+/** MongoDB connection */
 mongoose
     .connect(dbURI, {
         useNewUrlParser: true
@@ -25,8 +30,7 @@ mongoose
         console.error(err);
     })
 
-app.use('/api/users', users);
-app.use('/api/posts', posts);
-app.use('/api/profile', profile);
+/* ROUTES */
+app.use(require('./routes/user'));
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
