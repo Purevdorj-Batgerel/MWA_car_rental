@@ -3,13 +3,13 @@ const router = express.Router();
 var carDeals = require('../models/CarDeals');
 
 
-router.post('/API/Insert', (req, res) => {
+router.get('/API/Insert', (req, res) => {
 
       var test = new carDeals({
         dealtype: "Travel",
         fromlocation: {"locationname":"FairField",coordinate: {x:41.013415,y:-91.962262}},
         tolocation:  {"locationname" :"Chicago",coordinate: {x:41.973883,y:-87.906388}},
-        departureDate: new Date(2018,12,25),
+        departureDate: new Date(2018,12,30),
         bids: [],
         status: "New Deal"
       })
