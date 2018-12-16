@@ -16,7 +16,9 @@ const routes: Routes = [
   {path: 'deal-history', component: DealHistoryComponent},
   {path: 'deal-detail/:id', component: DealDetailComponent},
   {path: 'deal-search', component: DealsearchComponent},
-  {path: 'deal-offer', component: DealOfferComponent},
+ // {path: 'deal-offer', component: DealOfferComponent},
+  {path: 'dealOffer', component: DealOfferComponent},
+
   {path: 'login', component: LoginComponent}
 
 ];

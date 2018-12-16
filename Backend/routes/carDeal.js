@@ -47,10 +47,27 @@ router.post('/API/carDeal', (req, res) => {
     });
 })
 
-router.post('/API/Update/:id', (req, res) => {
-    res.json({
-        success: true
-    });
+router.patch('/API/OfferCost', (req, res) => {
+
+    let ojb = req.body;
+    carDeals.findById(ojb._id,(err,data)=>{
+     if(err) throw err;
+
+     let bid ={
+        diverID: ojb.diverID,
+        driverName: ojb.driverName,
+        offerCost: ojb.offerCost,
+        biddingDate: new Date(),
+        isConfirmed: 0
+     }
+
+     data.bids.push(bid);
+     data.save((err)=>{
+        if(err) throw err;
+        res.json({ success: "Offer was updated" });
+     });
+
+    })
 });
 
 router.get('/API/CarDealList', (req, res) => {
@@ -60,11 +77,22 @@ router.get('/API/CarDealList', (req, res) => {
             res.json(data);
         })
 
+});
 
-    // carDeals.find({},(error,data)=>{
-    //     if(error) { res.send("Could not read Car Deal List")};
-    //     res.status(200).json(data);
-    // });
+router.post('/API/CarDealSearch', (req, res) => {
+    // var recentDate = new Date();
+    let param = req.body;
+    console.log(param);
+
+    carDeals.find()
+        .where('dealtype').equals(param.dealtype)
+        .where('fromlocation.locationname').equals(param.locationfrom)
+        .where('tolocation.locationname').equals(param.locationto)
+        .sort({ createdDate: 1 })
+        .exec((err, data) => {
+            res.json(data);
+        })
+
 });
 
 router.get('/API/Search', (req, res) => {
@@ -72,8 +100,5 @@ router.get('/API/Search', (req, res) => {
         success: true
     });
 });
-
-
-
 
 module.exports = router;
