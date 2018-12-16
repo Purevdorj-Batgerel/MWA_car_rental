@@ -9,8 +9,8 @@ import {
 } from "@angular/forms";
 
 import { Observable } from "rxjs";
-import {HttpService} from "../Services/http.service";
-import {ILocation} from "../models/location.model";
+import { HttpService } from "../Services/http.service";
+import { ILocation } from "../models/location.model";
 
 @Component({
   selector: 'app-create-deal',
@@ -20,10 +20,9 @@ import {ILocation} from "../models/location.model";
 export class CreateDealComponent implements OnInit {
   myForm: FormGroup;
 
-  locations : ILocation[];
-  //phonenumer:
+  locations: ILocation[];
 
-  constructor(private formBuilder: FormBuilder, private http:HttpService) {
+  constructor(private formBuilder: FormBuilder, private http: HttpService) {
 
     this.http.get('http://localhost:5000/api/location/getAll').subscribe(result => {
       this.locations = result;
@@ -46,10 +45,36 @@ export class CreateDealComponent implements OnInit {
   ngOnInit() { }
 
   onSubmit() {
-    console.log(this.myForm);
-    this.http.post('http://localhost:5000/API/carDeal',this.myForm.value).subscribe(res=>{
+    let data = {
+      dealtype : this.myForm.value.CarType,
+      fromlocation: {
+        locationname: this.myForm.value.Departure,
+        coordinate: this.getCoordinate(this.myForm.value.Departure)
+      },
+      tolocation: {
+        locationname: this.myForm.value.Destination,
+        coordinate: this.getCoordinate(this.myForm.value.Destination)
+      },
+      departureDate: this.myForm.value.Date,
+      status: "New"
+    };
+
+    console.log(this.myForm.value);
+
+    this.http.post('http://localhost:5000/API/carDeal', data).subscribe(res => {
       console.log(res);
     })
+  }
+
+  getCoordinate(locationName:string) {
+    for(const location:ILocation of this.locations) {
+      if(location.name == locationName) {
+        return {
+          x: location.x,
+          y: location.y
+        };
+      }
+    }
   }
 
   exampleValidator(control: FormControl): { [s: string]: boolean } {

@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const cors = require('cors')
 
-
 var location = require('./models/Location');
 
 require('dotenv').config()

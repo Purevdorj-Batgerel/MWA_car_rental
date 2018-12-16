@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
-var carDeals = require('../models/CarDeals');
+
+const carDeals = require('../models/CarDeals');
 
 
 router.get('/API/Insert', (req, res) => {
-
-
       var test = new carDeals({
         dealtype: "Travel",
         fromlocation: {"locationname":"FairField",coordinate: {x:41.013415,y:-91.962262}},
@@ -26,8 +25,11 @@ router.get('/API/Insert', (req, res) => {
 });
 
 router.post('/API/carDeal',(req, res) => {
-    console.log(req.body);
-    res.json({success:"ok"})
+    const newCarDeal = new carDeals(req.body);
+    newCarDeal.save((err) => {
+        if(err) throw err;
+        res.json({success:"Inserted New cardeal to database"})
+    });
 })
 
 router.post('/API/Update/:id', (req, res) => {
@@ -37,7 +39,7 @@ router.post('/API/Update/:id', (req, res) => {
 });
 
 router.get('/API/CarDealList', (req, res) => {
-   
+
     carDeals.find({},(error,data)=>{
         if(error) { res.send("Could not read Car Deal List")};
         res.status(200).json(data);
