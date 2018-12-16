@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CardealService } from './../Services/cardeal.service';
 
 @Component({
   selector: 'app-dealsearch',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DealsearchComponent implements OnInit {
 
-  constructor() { }
+  cardealList;
+  constructor(private carDealService: CardealService) {
+    this.carDealService.getCarDealList().subscribe(data => {
+      console.log(data);
+      this.cardealList = data;
+    });
+  }
 
   ngOnInit() {
   }
