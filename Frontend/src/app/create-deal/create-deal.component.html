@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="panel-group">
+  <div class="panel-group" class="card-body" class="card h-center" style="width: 600px;">
     <div class="panel panel-primary">
       <div class="panel-body">Car Rental Register</div>
     </div>
@@ -10,51 +10,58 @@
     </div>
 
     <div>
+
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-        <div>
+
+        <div class="form-group" style="margin-left: 20px">
           CarType:
-          <select formControlName="CarType" >
+          <select formControlName="CarType">
 
 
-            <option value="">-- Rental Purpose --</option>
-            <option value="Travel">Travel</option>
-            <option value="Cargo">Cargo</option>
-            <option value="Business">Business
+            <option value="" class="form-control">-- Rental Purpose --</option>
+            <option value="Travel" class="form-control">Travel</option>
+            <option value="Cargo" class="form-control">Cargo</option>
+            <option value="Business" class="form-control">Business
           </select>
         </div>
 
-        <div>
+        <div class="form-group" style="margin-left: 20px">
           Departure:
           <select formControlName="Departure">
-            <option value="">-- FROM --</option>
-            <option *ngFor="let location of locations" value={{location.name}}>{{location.name}}</option>
+            <option value="" class="form-control">-- FROM --</option>
+            <option *ngFor="let location of locations" value={{location.name}} class="form-control">
+              {{location.name}}
+            </option>
           </select>
         </div>
 
-        <div>
+        <div class="form-group" style="margin-left: 20px">
           Destination:
           <select formControlName="Destination">
-            <option value="">-- To --</option>
-            <option *ngFor="let location of locations" value={{location.name}}>{{location.name}}</option>
+            <option value="" class="form-control">-- To --</option>
+            <option *ngFor="let location of locations" value={{location.name}} class="form-control">
+              {{location.name}}
+            </option>
           </select>
         </div>
 
-        <div>
+        <div class="form-group" style="margin-left: 20px">
           Departure Date:
           <input type="date" formControlName="Date">
         </div>
 
-        <div>
-          Phone-Number:
-          <input type="tel" formControlName="pre" /> - <input type="text" formControlName="mid" /> - <input type="text"
-            formControlName="last" />
+        <div class="form-group" style="margin-left: 20px">
+          Phone-Number:<input type="tel" formControlName="number" class="form-control" style="width: 300px"/>
         </div>
 
-        <div>
-          <button type="button" type="submit">Submit</button>
-          <button type="button" type="reset" value="Reset">Reset</button>
+        <div style="margin-left: 20px">
+          <button type="button" type="submit" class="btn btn-primary active" style="margin-left: 20px">Submit</button>
+
+          <button type="button" type="reset" value="Reset" class="btn btn-primary disabled" style="margin-left: 50px">Reset</button>
         </div>
+
       </form>
+
     </div>
   </div>
 </div>

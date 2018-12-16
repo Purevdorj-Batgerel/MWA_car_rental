@@ -5,7 +5,6 @@ import {
   FormControl,
   Validators,
   FormBuilder,
-  FormArray
 } from "@angular/forms";
 
 import { Observable } from "rxjs";
@@ -67,7 +66,7 @@ export class CreateDealComponent implements OnInit {
   }
 
   getCoordinate(locationName:string) {
-    for(const location:ILocation of this.locations) {
+    for(const location of this.locations) {
       if(location.name == locationName) {
         return {
           x: location.x,
