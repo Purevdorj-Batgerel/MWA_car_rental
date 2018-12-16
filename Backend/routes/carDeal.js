@@ -4,6 +4,17 @@ var carDeals = require('../models/CarDeals');
 
 
 router.post('/API/Insert', (req, res) => {
+
+
+    //insert db
+    carDeals.find({}).exec(function(err,carDeals){
+        if(err){
+            console.log('Error')
+        }else{
+            res.json(carDeals);
+        }
+    })
+
     res.json({
         success: true
     });
