@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   user$: Observable<IUser>;
 
   constructor(private store: Store<State>) {
-    this.user$ = store.pipe(select('user'));
+    this.user$ = this.store.pipe(select('user'));
   }
 
   ngOnInit() {

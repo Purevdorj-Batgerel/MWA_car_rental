@@ -3,8 +3,6 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { HttpService } from '../Services/http.service';
 import { Store } from '@ngrx/store';
 
-
-// import { State } from '../redux/user.state';
 import { State } from '../reducers';
 import * as UserActions from '../actions/user.actions';
 import { Router } from '@angular/router';
