@@ -9,6 +9,7 @@ import {
 } from "@angular/forms";
 
 import { Observable } from "rxjs";
+import {HttpService} from "../Services/http.service";
 
 @Component({
   selector: 'app-create-deal',
@@ -18,7 +19,11 @@ import { Observable } from "rxjs";
 export class CreateDealComponent implements OnInit {
   myForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  locations;
+
+  constructor(private formBuilder: FormBuilder, private http:HttpService) {
+
+    this.http.get('');
     this.myForm = this.formBuilder.group({
       'CarType': ['', [Validators.required, this.exampleValidator]],
       'Departure': ['', [Validators.required]],
