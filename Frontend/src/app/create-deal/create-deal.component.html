@@ -6,70 +6,55 @@
     </div>
     <div class="panel panel-primary">
       <div class="panel-body">
-
-
-       
-
-
       </div>
     </div>
 
     <div>
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-        <div formGroupName="clientRequist">
+        <div>
           CarType:
-          <select [formControlName]="CarType">
+          <select formControlName="CarType" >
+
+
             <option value="">-- Rental Purpose --</option>
             <option value="Travel">Travel</option>
             <option value="Cargo">Cargo</option>
             <option value="Business">Business
           </select>
-          <div *ngIf="!myForm.get('ClientRequest').get('CarType').valid">
-
-          </div>
         </div>
 
         <div>
           Departure:
-          <select [formControlName]="Departure">
-            <option value="">-- From --</option>
-            <option value="Fairfield">Fairfield</option>
-            <option value="Ottumwa">Ottumwa</option>
-            <option value="Iowa City">Iowa City</option>
-            <option value="Burlinton">Burlinton</option>
+          <select formControlName="Departure">
+            <option value="">-- FROM --</option>
+            <option *ngFor="let location of locations" value={{location.name}}>{{location.name}}</option>
           </select>
         </div>
 
         <div>
           Destination:
-          <select [formControlName]="Destination">
+          <select formControlName="Destination">
             <option value="">-- To --</option>
-            <option value="Des Moines">Des Moines</option>
-            <option value="Chicago">Chicago</option>
-            <option value="New York">New York</option>
+            <option *ngFor="let location of locations" value={{location.name}}>{{location.name}}</option>
           </select>
         </div>
 
         <div>
           Departure Date:
-          <input type="text" [formControlName]="Date">
+          <input type="date" formControlName="Date">
         </div>
 
         <div>
           Phone-Number:
-          <input type="text" [formControlName]="pre"> - <input type="text" [formControlName]="mid"> - <input type="text" [formControlName]="last">
-
+          <input type="tel" formControlName="pre" /> - <input type="text" formControlName="mid" /> - <input type="text"
+            formControlName="last" />
         </div>
 
         <div>
-          <button type="button" value="OK" [disabled]="!myForm.valid">OK</button>
-          <button type="button" value="Cancle">Cancle</button>
+          <button type="button" type="submit">Submit</button>
+          <button type="button" type="reset" value="Reset">Reset</button>
         </div>
-
-
       </form>
     </div>
-
   </div>
-
 </div>

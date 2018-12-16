@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.loginForm);
     this.http.post('http://localhost:5000/api/user/login', this.loginForm.value).subscribe(result => {
+
       if (result.success == true) {
         window.localStorage.setItem('token', result.token);
 
