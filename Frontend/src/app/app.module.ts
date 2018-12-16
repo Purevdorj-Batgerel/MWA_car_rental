@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,7 @@ import { LoginComponent } from './login/login.component';
 
 import { HttpService } from './Services/http.service';
 
-import { reducers, metaReducers } from './reducers';
+import { reducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,10 @@ import { reducers, metaReducers } from './reducers';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(reducers, { metaReducers })
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({
+      maxAge: 10, // Retains last 25 states
+    })
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

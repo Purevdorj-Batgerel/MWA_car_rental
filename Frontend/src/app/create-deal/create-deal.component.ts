@@ -45,7 +45,7 @@ export class CreateDealComponent implements OnInit {
 
   onSubmit() {
     let data = {
-      dealtype : this.myForm.value.CarType,
+      dealtype: this.myForm.value.CarType,
       fromlocation: {
         locationname: this.myForm.value.Departure,
         coordinate: this.getCoordinate(this.myForm.value.Departure)
@@ -65,9 +65,9 @@ export class CreateDealComponent implements OnInit {
     })
   }
 
-  getCoordinate(locationName:string) {
-    for(const location of this.locations) {
-      if(location.name == locationName) {
+  getCoordinate(locationName: string) {
+    for (const location of this.locations) {
+      if (location.name == locationName) {
         return {
           x: location.x,
           y: location.y

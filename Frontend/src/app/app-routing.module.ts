@@ -18,7 +18,6 @@ const routes: Routes = [
   {path: 'deal-search', component: DealsearchComponent},
   {path: 'deal-offer', component: DealOfferComponent},
   {path: 'login', component: LoginComponent}
-
 ];
 
 @NgModule({
