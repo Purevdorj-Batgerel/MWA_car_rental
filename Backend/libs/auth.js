@@ -1,4 +1,4 @@
-var key = require('../config/key');
+// var key = require('../config/key');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 

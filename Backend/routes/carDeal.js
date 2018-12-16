@@ -4,9 +4,24 @@ var carDeals = require('../models/CarDeals');
 
 
 router.post('/API/Insert', (req, res) => {
-    res.json({
-        success: true
-    });
+
+      var test = new carDeals({
+        dealtype: "Travel",
+        fromlocation: {"locationname":"FairField",coordinate: {x:41.013415,y:-91.962262}},
+        tolocation:  {"locationname" :"Chicago",coordinate: {x:41.973883,y:-87.906388}},
+        departureDate: new Date(2018,12,25),
+        bids: [],
+        status: "New Deal"
+      })
+
+      test.save((err)=>{
+
+        if(err) console.log(err);
+        res.json({
+            success: true
+        });
+      })
+
 });
 
 router.post('/API/Update/:id', (req, res) => {
