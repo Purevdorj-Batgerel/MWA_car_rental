@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 
-import {FormBuilder} from "@angular/forms";
 import {
   FormGroup,
   FormControl,
@@ -19,15 +18,14 @@ import { Observable } from "rxjs";
 export class CreateDealComponent implements OnInit {
   myForm:FormGroup;
 
-  constructor(private formuilder: FormBuilder) {
-    this.myForm = formuilder.group({
+  constructor(private formBuilder: FormBuilder) {
+    this.myForm = formBuilder.group({
 
-      'clientRequist': formuilder.group({
+
         'CarType': ['', [Validators.required,this.exampleValidator]],
         'Departure': ['', [Validators.required]],
         'Destination': ['', Validators.required],
         'Date': ['', [Validators.required, Validators.pattern('^\\d{4}(\\-|\\/|\\.)\\d{1,2}\\1\\d{1,2}$')]]
-      })
 
     });
 
@@ -37,6 +35,9 @@ export class CreateDealComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
+
   }
 
   onSubmit() {
@@ -66,5 +67,8 @@ export class CreateDealComponent implements OnInit {
     return promise;
   }
 
+  OK(){
 
-}
+  }}
+
+

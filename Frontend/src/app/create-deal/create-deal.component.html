@@ -16,7 +16,7 @@
 
     <div>
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-        <div formGroupName="clientRequist">
+        <div >
           CarType:
           <select [formControlName]="CarType">
             <option value="">-- Rental Purpose --</option>
@@ -24,19 +24,11 @@
             <option value="Cargo">Cargo</option>
             <option value="Business">Business
           </select>
-          <div *ngIf="!myForm.get('ClientRequest').get('CarType').valid">
-
-          </div>
         </div>
 
         <div>
           Departure:
           <select [formControlName]="Departure">
-            <option value="">-- From --</option>
-            <option value="Fairfield">Fairfield</option>
-            <option value="Ottumwa">Ottumwa</option>
-            <option value="Iowa City">Iowa City</option>
-            <option value="Burlinton">Burlinton</option>
           </select>
         </div>
 
@@ -63,7 +55,7 @@
         </div>
 
         <div>
-          <button type="button" value="OK" [disabled]="!myForm.valid">OK</button>
+          <button type="button" value="OK" [disabled]="!myForm.valid" onclick="OK">OK</button>
           <button type="button" value="Cancle">Cancle</button>
         </div>
 
