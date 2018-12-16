@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {
   FormGroup,
@@ -16,17 +16,17 @@ import { Observable } from "rxjs";
   styleUrls: ['./create-deal.component.css']
 })
 export class CreateDealComponent implements OnInit {
-  myForm:FormGroup;
+  myForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
-    this.myForm = formBuilder.group({
-
-
-        'CarType': ['', [Validators.required,this.exampleValidator]],
-        'Departure': ['', [Validators.required]],
-        'Destination': ['', Validators.required],
-        'Date': ['', [Validators.required, Validators.pattern('^\\d{4}(\\-|\\/|\\.)\\d{1,2}\\1\\d{1,2}$')]]
-
+    this.myForm = this.formBuilder.group({
+      'CarType': ['', [Validators.required, this.exampleValidator]],
+      'Departure': ['', [Validators.required]],
+      'Destination': ['', Validators.required],
+      'Date': ['', [Validators.required, Validators.pattern('^\\d{4}(\\-|\\/|\\.)\\d{1,2}\\1\\d{1,2}$')]],
+      'pre' : ['', Validators.required],
+      'mid': ['', Validators.required],
+      'last': ['', Validators.required]
     });
 
     this.myForm.valueChanges.subscribe(
@@ -34,16 +34,11 @@ export class CreateDealComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-
-
-
-  }
+  ngOnInit() { }
 
   onSubmit() {
     console.log(this.myForm);
   }
-
 
   exampleValidator(control: FormControl): { [s: string]: boolean } {
     if (control.value === 'Example') {
@@ -66,9 +61,6 @@ export class CreateDealComponent implements OnInit {
     );
     return promise;
   }
-
-  OK(){
-
-  }}
+}
 
 

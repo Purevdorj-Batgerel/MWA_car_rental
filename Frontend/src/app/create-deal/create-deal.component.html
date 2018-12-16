@@ -6,19 +6,14 @@
     </div>
     <div class="panel panel-primary">
       <div class="panel-body">
-
-
-       
-
-
       </div>
     </div>
 
     <div>
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-        <div >
+        <div>
           CarType:
-          <select [formControlName]="CarType">
+          <select formControlName="CarType">
             <option value="">-- Rental Purpose --</option>
             <option value="Travel">Travel</option>
             <option value="Cargo">Cargo</option>
@@ -28,13 +23,13 @@
 
         <div>
           Departure:
-          <select [formControlName]="Departure">
+          <select formControlName="Departure">
           </select>
         </div>
 
         <div>
           Destination:
-          <select [formControlName]="Destination">
+          <select formControlName="Destination">
             <option value="">-- To --</option>
             <option value="Des Moines">Des Moines</option>
             <option value="Chicago">Chicago</option>
@@ -44,25 +39,20 @@
 
         <div>
           Departure Date:
-          <input type="text" [formControlName]="Date">
+          <input type="text" formControlName="Date">
         </div>
 
         <div>
           Phone-Number:
-          <input type="text" [formControlName]="pre"/> - <input type="text" [formControlName]="mid"/> - <input type="text"
-                                                                                                             [formControlName]="last"/>
-
+          <input type="text" formControlName="pre" /> - <input type="text" formControlName="mid" /> - <input type="text"
+            formControlName="last" />
         </div>
 
         <div>
-          <button type="button" value="OK" [disabled]="!myForm.valid" onclick="OK">OK</button>
-          <button type="button" value="Cancle">Cancle</button>
+          <button type="button" type="submit">Submit</button>
+          <button type="button" type="reset" value="Reset">Reset</button>
         </div>
-
-
       </form>
     </div>
-
   </div>
-
 </div>
