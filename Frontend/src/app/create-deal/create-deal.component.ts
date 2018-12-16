@@ -10,6 +10,7 @@ import {
 
 import { Observable } from "rxjs";
 import {HttpService} from "../Services/http.service";
+import {ILocation} from "../models/location.model";
 
 @Component({
   selector: 'app-create-deal',
@@ -19,11 +20,14 @@ import {HttpService} from "../Services/http.service";
 export class CreateDealComponent implements OnInit {
   myForm: FormGroup;
 
-  locations;
+  locations : ILocation[];
+  //phonenumer:
 
   constructor(private formBuilder: FormBuilder, private http:HttpService) {
 
-    this.http.get('');
+    this.http.get('http://localhost:5000/api/location/getAll').subscribe(result => {
+      this.locations = result;
+    });
     this.myForm = this.formBuilder.group({
       'CarType': ['', [Validators.required, this.exampleValidator]],
       'Departure': ['', [Validators.required]],
@@ -43,6 +47,9 @@ export class CreateDealComponent implements OnInit {
 
   onSubmit() {
     console.log(this.myForm);
+    this.http.post('http://localhost:5000/API/carDeal',this.myForm.value).subscribe(res=>{
+      console.log(res);
+    })
   }
 
   exampleValidator(control: FormControl): { [s: string]: boolean } {

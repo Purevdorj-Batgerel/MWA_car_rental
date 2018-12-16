@@ -25,6 +25,11 @@ router.get('/API/Insert', (req, res) => {
 
 });
 
+router.post('/API/carDeal',(req, res) => {
+    console.log(req.body);
+    res.json({success:"ok"})
+})
+
 router.post('/API/Update/:id', (req, res) => {
     res.json({
         success: true
