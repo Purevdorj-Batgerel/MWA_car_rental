@@ -5,7 +5,6 @@ import {
   FormControl,
   Validators,
   FormBuilder,
-  FormArray
 } from "@angular/forms";
 
 import { Observable } from "rxjs";
@@ -32,9 +31,7 @@ export class CreateDealComponent implements OnInit {
       'Departure': ['', [Validators.required]],
       'Destination': ['', Validators.required],
       'Date': ['', [Validators.required, Validators.pattern('^\\d{4}(\\-|\\/|\\.)\\d{1,2}\\1\\d{1,2}$')]],
-      'pre': ['', Validators.required],
-      'mid': ['', Validators.required],
-      'last': ['', Validators.required]
+      'number': ['', Validators.required],
     });
 
     this.myForm.valueChanges.subscribe(
@@ -46,7 +43,7 @@ export class CreateDealComponent implements OnInit {
 
   onSubmit() {
     let data = {
-      dealtype : this.myForm.value.CarType,
+      dealtype: this.myForm.value.CarType,
       fromlocation: {
         locationname: this.myForm.value.Departure,
         coordinate: this.getCoordinate(this.myForm.value.Departure)
@@ -66,9 +63,9 @@ export class CreateDealComponent implements OnInit {
     })
   }
 
-  getCoordinate(locationName:string) {
-    for(const location of this.locations) {
-      if(location.name == locationName) {
+  getCoordinate(locationName: string) {
+    for (const location of this.locations) {
+      if (location.name == locationName) {
         return {
           x: location.x,
           y: location.y

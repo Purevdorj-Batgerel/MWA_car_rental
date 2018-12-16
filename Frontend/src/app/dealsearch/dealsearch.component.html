@@ -20,7 +20,7 @@
             <div class="col-md-3">
               <select  class="form-control" (change)="onchangeFrom($event)">
                 <option value="">All</option>
-                <option *ngFor="let location of locations" value={{location.name}}>{{location.name}}</option>
+                <option *ngFor="let location of locations" value={{location.name }}>{{location.name}}</option>
               </select>
             </div>
             <div class="col-md-3">
@@ -34,9 +34,6 @@
                 Search
               </button>
             </div>
-
-
-
           </div>
 
       

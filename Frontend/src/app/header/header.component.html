@@ -11,26 +11,26 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto" *ngIf="user$ | async as user">
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['home']"></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user.userType === 'user'">
           <a class="nav-link" [routerLink]="['deal-create']">Create Deal </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user.userType === 'user'">
           <a class="nav-link" [routerLink]="['deal-history']">Your Deal</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user.userType === 'driver'">
           <a class="nav-link" [routerLink]="['deal-search']">Search Car rental </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user.userType === 'driver'">
           <a class="nav-link" [routerLink]="['deal-offer']">Your Offer </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['login']">Login{{user.name}}</a>
+        <li class="nav-item" *ngIf="user.name === ''">
+          <a class="nav-link" [routerLink]="['login']">Login </a>
         </li>
       </ul>
     </div>

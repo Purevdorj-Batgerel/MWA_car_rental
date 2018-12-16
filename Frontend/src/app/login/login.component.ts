@@ -3,8 +3,9 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { HttpService } from '../Services/http.service';
 import { Store } from '@ngrx/store';
 
-import { State } from '../redux/user.state';
-import * as UserActions from '../redux/user.actions';
+import { State } from '../reducers';
+import * as UserActions from '../actions/user.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ import * as UserActions from '../redux/user.actions';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private http: HttpService, private formBuilder: FormBuilder, private store: Store<State>) {
+  constructor(private router: Router, private http: HttpService, private formBuilder: FormBuilder, private store: Store<State>) {
     this.loginForm = this.formBuilder.group({
       'email': ['', [
         Validators.required,
@@ -28,7 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loginForm);
     this.http.post('http://localhost:5000/api/user/login', this.loginForm.value).subscribe(result => {
 
       if (result.success == true) {
@@ -40,6 +40,12 @@ export class LoginComponent implements OnInit {
           name,
           userType
         }))
+
+        if (userType == 'driver') {
+          this.router.navigate(['deal-search']);
+        } else {
+          this.router.navigate(['deal-history']);
+        }
       }
     });
   }
