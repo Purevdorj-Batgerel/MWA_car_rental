@@ -24,7 +24,7 @@
         <counts>
           <entry key="css" value="1" />
           <entry key="html" value="3" />
-          <entry key="js" value="2" />
+          <entry key="js" value="3" />
           <entry key="json" value="1" />
           <entry key="md" value="1" />
           <entry key="ts" value="4" />
@@ -35,15 +35,15 @@
           <entry key="CSS" value="1" />
           <entry key="HTML" value="3" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="2" />
+          <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="TypeScript" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="4" />
-          <entry key="js" value="225" />
+          <entry key="html" value="8" />
+          <entry key="js" value="227" />
           <entry key="md" value="15" />
           <entry key="ts" value="147" />
           <entry key="txt" value="22" />
@@ -51,8 +51,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="4" />
-          <entry key="JavaScript" value="225" />
+          <entry key="HTML" value="8" />
+          <entry key="JavaScript" value="227" />
           <entry key="PLAIN_TEXT" value="37" />
           <entry key="TypeScript" value="147" />
         </counts>
@@ -71,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/Frontend/src/app/create-deal/create-deal.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="548">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -79,11 +79,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Frontend/src/app/create-deal/create-deal.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="38" column="50" lean-forward="true" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+            <state relative-caret-position="428">
+              <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Backend/routes/carDeal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -97,9 +106,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/Backend/routes/carDeal.js" />
         <option value="$PROJECT_DIR$/Frontend/src/app/create-deal/create-deal.component.ts" />
         <option value="$PROJECT_DIR$/Frontend/src/app/create-deal/create-deal.component.html" />
+        <option value="$PROJECT_DIR$/Backend/routes/carDeal.js" />
       </list>
     </option>
   </component>
@@ -116,6 +125,7 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/Backend/package.json" />
       <path value="$PROJECT_DIR$/Frontend/package.json" />
+      <path value="$PROJECT_DIR$/Test/final/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
@@ -184,6 +194,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="car&#9;FILE&#9;file:///Users/yafeigeng/Desktop/MWA/Lab-yaya/MWA_car_new/MWA_car_rental/Backend/routes/carDeal.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -215,7 +226,7 @@
       <option name="presentableId" value="Default" />
       <updated>1544916989751</updated>
       <workItem from="1544916991004" duration="243000" />
-      <workItem from="1544917361732" duration="5489000" />
+      <workItem from="1544917361732" duration="5623000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1544917009270</created>
@@ -235,7 +246,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5732000" />
+    <option name="totallyTimeSpent" value="5866000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -340,17 +351,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/routes/carDeal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Frontend/src/app/create-deal/create-deal.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
@@ -359,8 +363,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Frontend/src/app/create-deal/create-deal.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="38" column="50" lean-forward="true" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+        <state relative-caret-position="428">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/routes/carDeal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>

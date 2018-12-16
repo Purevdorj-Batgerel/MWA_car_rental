@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,10 @@ import { DealDetailComponent } from './deal-detail/deal-detail.component';
 import { DealsearchComponent } from './dealsearch/dealsearch.component';
 import { DealOfferComponent } from './deal-offer/deal-offer.component';
 import { LoginComponent } from './login/login.component';
+
+import { HttpService } from './Services/http.service';
+
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -26,10 +32,12 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot(reducers, { metaReducers })
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

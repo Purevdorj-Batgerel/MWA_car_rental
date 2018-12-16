@@ -8,14 +8,14 @@ const CarDealSchema = new Schema({
         required: true
     },
     fromlocation: {
-        name: String,
+        locationname: String,
         coordinate: {
             x: Number,
             y: Number
         }
     },
     tolocation: {
-        name: String,
+        locationname: String,
         coordinate: {
             x: Number,
             y: Number
