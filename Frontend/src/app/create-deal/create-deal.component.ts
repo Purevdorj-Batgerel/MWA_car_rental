@@ -29,7 +29,7 @@ export class CreateDealComponent implements OnInit {
       'Departure': ['', [Validators.required]],
       'Destination': ['', Validators.required],
       'Date': ['', [Validators.required, Validators.pattern('^\\d{4}(\\-|\\/|\\.)\\d{1,2}\\1\\d{1,2}$')]],
-      'pre' : ['', Validators.required],
+      'pre': ['', Validators.required],
       'mid': ['', Validators.required],
       'last': ['', Validators.required]
     });

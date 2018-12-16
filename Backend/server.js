@@ -41,7 +41,7 @@ mongoose
 /* ROUTES */
 app.use('/api/user', require('./routes/user'));
 app.use("/", require('./routes/carDeal'));
-app.use("/", require('./routes/location'));
+app.use("/api/location", require('./routes/location'));
 
 
 app.post('/test', (req, res) => {
