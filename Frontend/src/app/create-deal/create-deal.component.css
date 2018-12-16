@@ -1,0 +1,12 @@
+.button-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    width: 150px;
+}
+
+h4 {
+    margin-bottom: 30px;
+}
