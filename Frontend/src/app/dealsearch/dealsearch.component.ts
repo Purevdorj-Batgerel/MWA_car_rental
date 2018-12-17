@@ -72,6 +72,7 @@ export class DealsearchComponent implements OnInit {
 
   onOffer(event) {
     const requestID: string = event.target.value;
+    console.log(requestID);
     this.store.dispatch(new DealAction.SelectDeal(requestID));
     // this.transferService.emitvalue(requestID);
     // console.log(requestID);
