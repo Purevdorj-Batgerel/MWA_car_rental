@@ -111,6 +111,7 @@ router.get('/API/CarDealList', (req, res) => {
 
 router.get('/API/dealList/:username', (req, res) => {
     console.log('get historyRequists');
+    //getting data from MongoDB (mLab)
     carDeals.find({
             username: req.params.username
         })

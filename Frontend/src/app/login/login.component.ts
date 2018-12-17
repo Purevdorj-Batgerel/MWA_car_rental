@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
+  //Store - Redux's store
   constructor(private router: Router, private http: HttpService, private formBuilder: FormBuilder, private store: Store<State>) {
     this.loginForm = this.formBuilder.group({
       'email': ['', [

@@ -11,8 +11,11 @@ import { take } from 'rxjs/operators';
 })
 export class DealHistoryComponent implements OnInit {
   carDealsList;
+
   constructor(private http: HttpService, private store: Store<State>) {
+
     this.store.pipe(select('user'), take(1)).subscribe(result => {
+      // getting data from Back end
       this.http.get(`http://localhost:5000/API/dealList/${result.name}`).subscribe(data => {
         console.log(data);
         this.carDealsList = data;
