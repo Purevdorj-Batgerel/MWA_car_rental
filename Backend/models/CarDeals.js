@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 // Create schema
 const CarDealSchema = new Schema({
-    tittle : String,
+    tittle: String,
+    username: String,
     dealtype: {
         type: String,
         required: true
@@ -11,7 +12,7 @@ const CarDealSchema = new Schema({
     fromlocation: {
         locationname: String,
         coordinate: {
-            x: Number, 
+            x: Number,
             y: Number
         }
     },
