@@ -10,15 +10,18 @@ import { DealsearchComponent } from './dealsearch/dealsearch.component';
 import { DealOfferComponent } from './deal-offer/deal-offer.component';
 import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'deal-create', component: CreateDealComponent},
-  {path: 'deal-history', component: DealHistoryComponent},
-  {path: 'deal-detail/:id', component: DealDetailComponent},
-  {path: 'deal-search', component: DealsearchComponent},
-  {path: 'deal-offer', component: DealOfferComponent},
-  {path: 'login', component: LoginComponent}
+import { AuthGuard } from './guards/auth.guard';
+import { UserTypeGuard } from './guards/userType.guard';
 
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'deal-create', component: CreateDealComponent, canActivate: [AuthGuard, UserTypeGuard] },
+  { path: 'deal-history', component: DealHistoryComponent, canActivate: [AuthGuard, UserTypeGuard] },
+  { path: 'deal-detail/:id', component: DealDetailComponent, canActivate: [AuthGuard, UserTypeGuard] },
+  { path: 'deal-search', component: DealsearchComponent, canActivate: [AuthGuard, UserTypeGuard] },
+  { path: 'deal-offer', component: DealOfferComponent}, // , canActivate: [AuthGuard, UserTypeGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({

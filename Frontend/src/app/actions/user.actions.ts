@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store'
-import { IUser } from './user.model';
+import { IUser } from '../models/user.model';
 
 export const LOGIN = 'LOGIN'
 
