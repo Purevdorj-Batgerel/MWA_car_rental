@@ -9,7 +9,7 @@ import {
 
 import { Observable } from "rxjs";
 import { take } from 'rxjs/operators';
-import { HttpService } from "../Services/http.service";
+import { HttpService } from "../services/http.service";
 import { ILocation } from "../models/location.model";
 import { IUser } from '../models/user.model';
 import { State } from '../reducers';

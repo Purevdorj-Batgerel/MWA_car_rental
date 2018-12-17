@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../Services/http.service';
+import { HttpService } from '../services/http.service';
 import { IDeal } from '../models/deal.model';
 import { Store, select } from '@ngrx/store';
 import { State } from '../reducers';

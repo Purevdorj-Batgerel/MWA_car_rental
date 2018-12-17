@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { HttpService } from '../Services/http.service';
+import { HttpService } from '../services/http.service';
 import { Store } from '@ngrx/store';
 
 import { State } from '../reducers';

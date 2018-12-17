@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CardealService } from './../Services/cardeal.service';
-import { LocationService } from './../Services/location.service';
-import { DealtransferService } from './../Services/dealtransfer.service';
-import { ILocation } from '../models/location.model';
+import { CardealService } from '../services/cardeal.service';
+import { LocationService } from '../services/location.service';
+import { DealtransferService } from '../services/dealtransfer.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { State } from '../reducers';
