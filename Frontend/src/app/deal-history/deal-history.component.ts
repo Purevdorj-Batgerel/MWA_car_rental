@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CardealService } from './../Services/cardeal.service';
+import { HttpService } from '../services/http.service';
+import { Store, select } from '@ngrx/store';
+import { State } from '../reducers';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-deal-history',
@@ -7,12 +10,17 @@ import { CardealService } from './../Services/cardeal.service';
   styleUrls: ['./deal-history.component.css']
 })
 export class DealHistoryComponent implements OnInit {
-  cardealList;
-  constructor(private carDealService: CardealService) {
-    this.carDealService.getCarDealList({}).subscribe(data => {
-      console.log(data);
-      this.cardealList = data;
-    });
+  carDealsList;
+
+  constructor(private http: HttpService, private store: Store<State>) {
+
+    this.store.pipe(select('user'), take(1)).subscribe(result => {
+      // getting data from Back end
+      this.http.get(`http://localhost:5000/API/dealList/${result.name}`).subscribe(data => {
+        console.log(data);
+        this.carDealsList = data;
+      })
+    })
   }
   ngOnInit() {
   }

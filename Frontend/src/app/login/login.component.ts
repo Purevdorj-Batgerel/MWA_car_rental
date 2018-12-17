@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { HttpService } from '../Services/http.service';
+import { HttpService } from '../services/http.service';
 import { Store } from '@ngrx/store';
 
 import { State } from '../reducers';
@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
+  //Store - Redux's store
   constructor(private router: Router, private http: HttpService, private formBuilder: FormBuilder, private store: Store<State>) {
     this.loginForm = this.formBuilder.group({
       'email': ['', [
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
         window.localStorage.setItem('token', result.token);
 
         const name = "test"; //get from token
-        const userType = "driver";
+        let userType = "driver";
         this.store.dispatch(new UserActions.Login({
           name,
           userType

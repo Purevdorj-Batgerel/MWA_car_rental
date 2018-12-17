@@ -7,25 +7,37 @@ const carDeals = require('../models/CarDeals');
 router.get('/API/Insert', (req, res) => {
     var test = new carDeals({
         tittle: "I need travel to Texas",
-        username : "Huu Thai",
+        username: "Huu Thai",
         dealtype: "Travel",
-        fromlocation: { "locationname": "Fairfield", coordinate: { x: 41.013415, y: -91.962262 } },
-        tolocation: { "locationname": "Chicago", coordinate: { x: 41.973883, y: -87.906388 } },
+        fromlocation: {
+            "locationname": "Fairfield",
+            coordinate: {
+                x: 41.013415,
+                y: -91.962262
+            }
+        },
+        tolocation: {
+            "locationname": "Chicago",
+            coordinate: {
+                x: 41.973883,
+                y: -87.906388
+            }
+        },
         departureDate: new Date(2019, 01, 30),
         bids: [{
-            diverID: "0001",
-            driverName: "Huu Thai Ho",
-            offerCost: 200,
-            biddingDate: new Date(),
-            isConfirmed: 0
-        },
-        {
-            diverID: "0002",
-            driverName: "Yafei",
-            offerCost: 180,
-            biddingDate: new Date(),
-            isConfirmed: 0
-        }
+                diverID: "0001",
+                driverName: "Huu Thai Ho",
+                offerCost: 200,
+                biddingDate: new Date(),
+                isConfirmed: 0
+            },
+            {
+                diverID: "0002",
+                driverName: "Yafei",
+                offerCost: 180,
+                biddingDate: new Date(),
+                isConfirmed: 0
+            }
         ],
         status: "New Deal"
     });
@@ -42,8 +54,10 @@ router.get('/API/Insert', (req, res) => {
 
 /** GET Car deal detail */
 router.get('/API/CarDeal/:_id', (req, res) => {
-    carDeals.findOne({_id: req.params._id}, (err, result) => {
-        if(err) throw err;
+    carDeals.findOne({
+        _id: req.params._id
+    }, (err, result) => {
+        if (err) throw err;
         res.status(200).json(result);
     })
 });
@@ -53,71 +67,102 @@ router.post('/API/carDeal', (req, res) => {
     const newCarDeal = new carDeals(req.body);
     newCarDeal.save((err) => {
         if (err) throw err;
-        res.json({ success: "Inserted New cardeal to database" })
+        res.json({
+            success: "Inserted New cardeal to database"
+        })
     });
 })
 
 router.patch('/API/OfferCost', (req, res) => {
 
     let ojb = req.body;
-    carDeals.findById(ojb._id,(err,data)=>{
-     if(err) throw err;
+    carDeals.findById(ojb._id, (err, data) => {
+        if (err) throw err;
 
-     let bid ={
-        diverID: ojb.diverID,
-        driverName: ojb.driverName,
-        offerCost: ojb.offerCost,
-        biddingDate: new Date(),
-        isConfirmed: 0
-     }
+        let bid = {
+            diverID: ojb.diverID,
+            driverName: ojb.driverName,
+            offerCost: ojb.offerCost,
+            biddingDate: new Date(),
+            isConfirmed: 0
+        }
 
-     data.bids.push(bid);
-     data.save((err)=>{
-        if(err) throw err;
-        res.json({ success: "Offer was updated" });
-     });
+        data.bids.push(bid);
+        data.save((err) => {
+            if (err) throw err;
+            res.json({
+                success: "Offer was updated"
+            });
+        });
 
     })
 });
 
 router.get('/API/CarDealList', (req, res) => {
     // var recentDate = new Date();
-    carDeals.find({}).sort({ createdDate: 1 })
+    carDeals.find({}).sort({
+            createdDate: 1
+        })
         .exec((err, data) => {
             res.json(data);
         })
 
 });
 
+router.get('/API/dealList/:username', (req, res) => {
+    console.log('get historyRequists');
+    //getting data from MongoDB (mLab)
+    carDeals.find({
+            username: req.params.username
+        })
+        .exec((err, result) => {
+            if (err) {
+                console.log('Error to get requist');
+            } else {
+                res.json(result);
+            }
+        })
+})
+
 router.get('/API/dealdetail/:id', (req, res) => {
     // var recentDate = new Date();
-
     console.log("abc");
-    carDeals.find({_id:req.query.id})
-            .exec((err, data) => {
+    carDeals.find({
+            _id: req.query.id
+        })
+        .exec((err, data) => {
             res.json(data);
         })
-
 });
 
 router.post('/API/CarDealSearch', (req, res) => {
     // var recentDate = new Date();
-    let param = req.body;
-    console.log(param);
+    const param = req.body;
+    let searchParam = '';
 
-    var seachStr="";
-
-    if (param.dealtype != "0"){
-        seachStr = seachStr.concat("dealtype: " + param.dealtype) ;
+    if (param.dealtype != 'All') {
+        searchParam += '1';
+    }
+    if (param.locationfrom != 'All') {
+        searchParam += '2';
+    }
+    if (param.locationto != 'All') {
+        searchParam += '3';
     }
 
-    if (param.locationfrom != "0"){
-        seachStr = seachStr.concat(", fromlocation.locationname: " + param.locationfrom) ;
-    }
+    // var seachStr="";
 
-    if (param.locationto != "0"){
-        seachStr = seachStr.concat(", tolocation.locationname: " + param.locationto );
-    }
+    // if (param.dealtype != "0"){
+    //     seachStr = seachStr.concat("dealtype: " + param.dealtype) ;
+    // }
+
+    // if (param.locationfrom != "0"){
+    //     seachStr = seachStr.concat(", fromlocation.locationname: " + param.locationfrom) ;
+    // }
+
+    // if (param.locationto != "0"){
+    //     seachStr = seachStr.concat(", tolocation.locationname: " + param.locationto );
+    // }
 
     console.log();
 

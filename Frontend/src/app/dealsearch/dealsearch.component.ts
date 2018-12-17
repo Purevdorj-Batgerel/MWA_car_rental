@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CardealService } from './../Services/cardeal.service';
-import { LocationService } from './../Services/location.service';
-import { DealtransferService } from './../Services/dealtransfer.service';
-import { ILocation } from '../models/location.model';
 import { IDeal } from '../models/deal.model';
+import { CardealService } from '../services/cardeal.service';
+import { LocationService } from '../services/location.service';
+import { DealtransferService } from '../services/dealtransfer.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { State } from '../reducers';
@@ -16,13 +15,13 @@ import * as DealAction from '../actions/deal.actions';
 })
 export class DealsearchComponent implements OnInit {
 
-  cardealList:IDeal[] ;
+  cardealList: IDeal[];
   locations;
 
   typeParam: String = 'All';
   fromLocationParam: String = 'All';
   toLocationParam: String = 'All';
-  errorMsg: String ='';
+  errorMsg: String = '';
 
   constructor(private carDealService: CardealService,
     private locationService: LocationService,
@@ -44,15 +43,15 @@ export class DealsearchComponent implements OnInit {
       locationfrom: this.fromLocationParam,
       locationto: this.toLocationParam
     };
- 
+
     this.carDealService.getCarDealList(params).subscribe(data => {
-      
-      if (data.length == 0) { this.errorMsg = 'Data was not found';}
+
+      if (data.length == 0) { this.errorMsg = 'Data was not found'; }
       else {
-        this.errorMsg= '';
+        this.errorMsg = '';
         this.cardealList = data;
       }
-   
+
     });
 
   }
