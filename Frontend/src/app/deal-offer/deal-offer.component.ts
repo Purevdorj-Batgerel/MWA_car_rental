@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DealtransferService } from './../Services/dealtransfer.service';
-import { CardealService } from './../Services/cardeal.service';
+import { DealtransferService } from '../services/dealtransfer.service';
+import { CardealService } from '../services/cardeal.service';
 import { IDeal } from '../models/deal.model';
 import { Store, select, resultMemoize } from '@ngrx/store';
 import { State } from '../reducers';

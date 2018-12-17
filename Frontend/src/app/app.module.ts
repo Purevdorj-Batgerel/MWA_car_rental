@@ -17,7 +17,7 @@ import { DealsearchComponent } from './dealsearch/dealsearch.component';
 import { DealOfferComponent } from './deal-offer/deal-offer.component';
 import { LoginComponent } from './login/login.component';
 
-import { HttpService } from './Services/http.service';
+import { HttpService } from './services/http.service';
 
 import { reducers } from './reducers';
 import { AuthGuard } from './guards/auth.guard';
