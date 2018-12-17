@@ -31,7 +31,6 @@ const CarDealSchema = new Schema({
         offerCost: Number,
         biddingDate: Date,
         isConfirmed: Boolean
-
     }],
 
     status: String,
