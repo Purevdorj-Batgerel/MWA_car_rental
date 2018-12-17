@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container" >
 
-  <div class="panel-group" class="card-body" class="card h-center" style="width: 600px;">
+  <div class="panel-group" class="card-body" class="card h-center"
+       style="width: 600px;height:500px;background-color: #a6e1ec;margin-right:auto;">
     <div class="panel panel-primary">
       <div class="panel-body">Car Rental Register</div>
     </div>
@@ -8,7 +9,6 @@
       <div class="panel-body">
       </div>
     </div>
-
     <div>
 
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
@@ -21,7 +21,8 @@
             <option value="" class="form-control">-- Rental Purpose --</option>
             <option value="Travel" class="form-control">Travel</option>
             <option value="Cargo" class="form-control">Cargo</option>
-            <option value="Business" class="form-control">Business
+            <option value="Business" class="form-control">Business</option>
+
           </select>
         </div>
 
@@ -55,9 +56,11 @@
         </div>
 
         <div style="margin-left: 20px">
-          <button type="button" type="submit" class="btn btn-primary active" style="margin-left: 20px">Submit</button>
+          <button  type="submit" class="btn btn-primary active" style="margin-left: 20px">Submit</button>
 
-          <button type="button" type="reset" value="Reset" class="btn btn-primary disabled" style="margin-left: 50px">Reset</button>
+          <button  type="reset" value="Reset" class="btn btn-primary disabled" style="margin-left: 50px">
+            Reset
+          </button>
         </div>
 
       </form>

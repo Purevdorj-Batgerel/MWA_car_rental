@@ -15,6 +15,4 @@ export class CardealService {
   searchCarDealList() {
     return this.http.get('http://localhost:5000/API/CarDealList');
  }
- 
-
 }
