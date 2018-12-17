@@ -3,8 +3,6 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const cors = require('cors')
 
-var location = require('./models/Location');
-
 require('dotenv').config()
 
 const path = require('path'); //node core module
@@ -49,7 +47,5 @@ app.post('/test', (req, res) => {
         "test": "OK"
     });
 })
-
-
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
