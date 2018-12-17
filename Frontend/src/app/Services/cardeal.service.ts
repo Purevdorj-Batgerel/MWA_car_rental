@@ -15,6 +15,7 @@ export class CardealService {
   searchCarDealList() {
     return this.http.get('http://localhost:5000/API/CarDealList');
  }
+
  
  carDealOffer(OfferParams) {
   return this.http.patch('http://localhost:5000/API/OfferCost',OfferParams);

@@ -14,5 +14,60 @@
   </div>
 
 
-  
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+      <table class="table table-bordered" border="solid,1px," style="width: 300px;height: 100px">
+        <thead>
+        <tr>
+          <th>Request</th>
+          <th>Purpose</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let post of cardealList">
+        <tr>
+
+          <td></td>
+          <td>
+            {{post.dealtype}}
+            <button class="btn-primary btn-xs">Detail</button>
+          </td>
+
+        </tbody>
+      </table>
+
+
+    </div>
+
+    <div>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th style="width: 300px">Tittle</th>
+          <th>Type</th>
+          <th>Departure</th>
+          <th>Destination</th>
+          <th>DepartDate</th>
+          <th>Offers</th>
+          <th>Post Date</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let post of cardealList">
+        <tr>
+          <td>{{post.tittle}}</td>
+          <td>{{post.dealtype}}</td>
+          <td>{{post.fromlocation.locationname}}</td>
+          <td>{{post.tolocation.locationname}}</td>
+          <td>{{post.departureDate | date:'MM/dd/yyyy'}}</td>
+          <td>{{post.bids.length}}</td>
+          <td>{{post.createdDate | date:'MM/dd/yyyy'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
 </div>
