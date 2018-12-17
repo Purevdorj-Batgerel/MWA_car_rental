@@ -6,8 +6,38 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-body">
-       <div class="row">Deal code:</div>
 
+       <div class="row">
+        <div class="col-md-2">Title : </div>
+        <div class="col-md-6">{{dealDetail.tittle}}</div>
+       </div>
+
+       <div class="row">
+          <div class="col-md-2">Departure : </div>
+          <div class="col-md-6"></div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-2">Destination : </div>
+            <div class="col-md-6"></div>
+          </div>
+
+          
+         <div class="row">
+            <div class="col-md-2">Departure Date : </div>
+            <div class="col-md-6"></div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-2">Offer Cost : </div>
+              <div class="col-md-6">
+                <input value="$" #offerprice>
+                <button class="btn-xs btn-primary" (click)="onSendOffer(offerprice)">Send offer</button>
+              </div>
+              <div class="col-md-4"> 
+                  
+                </div>
+            </div>
       </div>
     </div>
   </div>

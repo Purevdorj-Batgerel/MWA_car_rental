@@ -20,9 +20,9 @@ export class CardealService {
   return this.http.patch('http://localhost:5000/API/OfferCost',OfferParams);
 }
 
-
 getDealDetail(reqID){
-  return this.http.get('http://localhost:5000/API/dealdetail?id=${{reqID}}');
+ 
+  return this.http.get('http://localhost:5000/API/CarDeal/' + reqID);
 }
 
 }

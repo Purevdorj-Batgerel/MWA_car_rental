@@ -7,9 +7,10 @@ const carDeals = require('../models/CarDeals');
 router.get('/API/Insert', (req, res) => {
     var test = new carDeals({
         tittle: "I need travel to Texas",
+        username : "Huu Thai",
         dealtype: "Travel",
-        fromlocation: { "locationname": "Boston", coordinate: { x: 41.013415, y: -91.962262 } },
-        tolocation: { "locationname": "Texas", coordinate: { x: 41.973883, y: -87.906388 } },
+        fromlocation: { "locationname": "Fairfield", coordinate: { x: 41.013415, y: -91.962262 } },
+        tolocation: { "locationname": "Chicago", coordinate: { x: 41.973883, y: -87.906388 } },
         departureDate: new Date(2019, 01, 30),
         bids: [{
             diverID: "0001",
@@ -43,7 +44,6 @@ router.get('/API/Insert', (req, res) => {
 router.get('/API/CarDeal/:_id', (req, res) => {
     carDeals.findOne({_id: req.params._id}, (err, result) => {
         if(err) throw err;
-
         res.status(200).json(result);
     })
 });
