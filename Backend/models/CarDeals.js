@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 // Create schema
 const CarDealSchema = new Schema({
     tittle : String,
+    username : String,
     dealtype: {
         type: String,
         required: true

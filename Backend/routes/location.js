@@ -3,7 +3,6 @@ const router = express.Router();
 var location = require('../models/Location');
 
 router.get('/getAll', (req, res) => {
-
     location.find({},(error,data)=>{
         if(error) { res.send("Could not read location List")};
         console.dir()

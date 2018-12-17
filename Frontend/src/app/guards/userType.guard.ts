@@ -21,7 +21,7 @@ export class UserTypeGuard implements CanActivate {
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-
+        //if drive 
 
         console.log(next, state);
         return true;

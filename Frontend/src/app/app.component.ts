@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Carrental-app';
+
+
+  dosth(event){
+     console.log(event);
+  }
 }
 

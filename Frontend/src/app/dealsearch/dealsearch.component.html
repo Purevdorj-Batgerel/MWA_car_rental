@@ -20,7 +20,7 @@
             <div class="col-md-3">
               <select  class="form-control" (change)="onchangeFrom($event)">
                 <option value="">All</option>
-                <option *ngFor="let location of locations" value={{location.name }}>{{location.name}}</option>
+                <option *ngFor="let location of locations" value={{location.name}}>{{location.name}}</option>
               </select>
             </div>
             <div class="col-md-3">
@@ -61,7 +61,8 @@
                 <td>{{post.bids.length}}</td>
                 <td>{{post.createdDate | date:'MM/dd/yyyy'}}</td>
                 <td>
-                  <button data-toggle="modal" data-target="#myModal">Offer</button>
+                  <button value={{post._id}} (click)="onOffer($event)">offer</button>
+                
                 </td>
               </tr>
             </tbody>`
@@ -71,24 +72,4 @@
       </div>
     </div>
   </div>
-
-  <div id="myModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Modal Header</h4>
-          </div>
-          <div class="modal-body">
-            <p>Some text in the modal.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-    
-      </div>
-    </div>
-
 </div>

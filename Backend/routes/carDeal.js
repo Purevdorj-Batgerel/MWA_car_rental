@@ -79,6 +79,17 @@ router.get('/API/CarDealList', (req, res) => {
 
 });
 
+router.get('/API/dealdetail/:id', (req, res) => {
+    // var recentDate = new Date();
+
+    console.log("abc");
+    carDeals.find({_id:req.query.id})
+            .exec((err, data) => {
+            res.json(data);
+        })
+
+});
+
 router.post('/API/CarDealSearch', (req, res) => {
     // var recentDate = new Date();
     let param = req.body;

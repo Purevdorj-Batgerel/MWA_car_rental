@@ -1,0 +1,16 @@
+
+
+<p>ddd</p>
+<p>ddd</p>
+<p>ddd</p>
+<p>ddd</p>
+<input [value]="message" (input)="message=$event.target.value">
+<input value="abc" #myname>
+<button (click)="SayMyname(myname)">say name</button>
+
+<p (click)="dosomething()">Name : {{message}}</p> 
+
+<ng-content></ng-content>
+
+
+<button (click)="getContent()">get content child</button>

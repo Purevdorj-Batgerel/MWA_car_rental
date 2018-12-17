@@ -23,6 +23,8 @@ import { reducers } from './reducers';
 import { AuthGuard } from './guards/auth.guard';
 import { UserTypeGuard } from './guards/userType.guard';
 import { TokenInterceptor } from './services/token.interceptor';
+import { TestComponent } from './test/test.component';
+import { DealOfferHisComponent } from './deal-offer-his/deal-offer-his/deal-offer-his.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { TokenInterceptor } from './services/token.interceptor';
     DealDetailComponent,
     DealsearchComponent,
     DealOfferComponent,
-    LoginComponent
+    LoginComponent,
+    TestComponent,
+    DealOfferHisComponent
   ],
   imports: [
     BrowserModule,

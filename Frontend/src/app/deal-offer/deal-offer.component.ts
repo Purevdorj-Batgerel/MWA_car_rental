@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DealtransferService } from './../Services/dealtransfer.service';
 
 @Component({
   selector: 'app-deal-offer',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DealOfferComponent implements OnInit {
 
-  constructor() { }
+  public requestID: String = '';
+
+  constructor(private dealstranfer: DealtransferService) {
+    this.dealstranfer.emitter.subscribe(reqID => {
+      this.requestID = reqID;
+      console.log(this.requestID);
+    }); 
+
+    
+  }
 
   ngOnInit() {
   }
