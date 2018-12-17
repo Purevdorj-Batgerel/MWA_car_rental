@@ -137,8 +137,18 @@ router.get('/API/dealdetail/:id', (req, res) => {
 
 router.post('/API/CarDealSearch', (req, res) => {
     // var recentDate = new Date();
-    let param = req.body;
-    console.log(param);
+    const param = req.body;
+    let searchParam = '';
+
+    if (param.dealtype != 'All') {
+        searchParam += '1';
+    }
+    if (param.locationfrom != 'All') {
+        searchParam += '2';
+    }
+    if (param.locationto != 'All') {
+        searchParam += '3';
+    }
 
     carDeals.find()
         .where('dealtype').equals(param.dealtype)
