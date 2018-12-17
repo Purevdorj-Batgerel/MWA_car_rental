@@ -105,10 +105,26 @@ router.post('/API/CarDealSearch', (req, res) => {
     let param = req.body;
     console.log(param);
 
-    carDeals.find()
-        .where('dealtype').equals(param.dealtype)
-        .where('fromlocation.locationname').equals(param.locationfrom)
-        .where('tolocation.locationname').equals(param.locationto)
+    var seachStr="";
+
+    if (param.dealtype != "0"){
+        seachStr = seachStr.concat("dealtype: " + param.dealtype) ;
+    }
+
+    if (param.locationfrom != "0"){
+        seachStr = seachStr.concat(", fromlocation.locationname: " + param.locationfrom) ;
+    }
+
+    if (param.locationto != "0"){
+        seachStr = seachStr.concat(", tolocation.locationname: " + param.locationto );
+    }
+
+    console.log();
+
+    carDeals.find({})
+        // .where('dealtype').equals(param.dealtype)
+        // .where('fromlocation.locationname').equals(param.locationfrom)
+        // .where('tolocation.locationname').equals(param.locationto)
         .sort({ createdDate: 1 })
         .exec((err, data) => {
             res.json(data);
