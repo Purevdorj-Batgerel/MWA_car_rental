@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         window.localStorage.setItem('token', result.token);
 
         const name = "test"; //get from token
-        const userType = "driver";
+        let userType = "user";
         this.store.dispatch(new UserActions.Login({
           name,
           userType

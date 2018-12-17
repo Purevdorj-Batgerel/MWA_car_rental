@@ -1,34 +1,51 @@
 <div class="container">
-    <table class="table table-striped">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="row" *ngIf="carDeal">
+    <div class="col">
+      <div class="row">
+        <h4>Request Details</h4>
+      </div>
+      <div class="row">
+        <div class="col-4"><span class="label">Request ID:</span></div>
+        <div class="col">{{carDeal._id}}</div>
+      </div>
+      <div class="row">
+        <div class="col-4"><span class="label">Title:</span></div>
+        <div class="col">{{carDeal.tittle}}</div>
+      </div>
+      <div class="row">
+        <div class="col-4"><span class="label">Service:</span></div>
+        <div class="col">{{carDeal.dealtype}}</div>
+      </div>
+      <div class="row">
+        <div class="col-4"><span class="label">From:</span></div>
+        <div class="col">{{carDeal.fromlocation.locationname}}</div>
+      </div>
+      <div class="row">
+        <div class="col-4"><span class="label">To:</span></div>
+        <div class="col">{{carDeal.tolocation.locationname}}</div>
+      </div>
+      <div class="row">
+        <div class="col-4"><span class="label">Status:</span></div>
+        <div class="col">{{carDeal.status}}</div>
+      </div>
+      <div class="row">
+        <div class="col-4"><span class="label">Departure date:</span></div>
+        <div class="col">{{carDeal.departureDate | date}}</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <h4>Driver Offers</h4>
+      </div>
+      <div class="row" *ngFor="let offer of carDeal.bids">
+        <div class="col">{{offer.driverName}}</div>
+        <div class="col">{{offer.offerCost}}</div>
+        <div class="col"><button class="btn btn-primary">Confirm</button></div>
+      </div>
+    </div>
 
-
+    <div class="spinner" *ngIf="carDeal === undefined"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+      Loading...</div>
+  </div>
+  <div #gmap style="width:100%;height:400px"></div>
 </div>

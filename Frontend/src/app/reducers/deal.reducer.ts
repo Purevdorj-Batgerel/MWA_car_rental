@@ -5,7 +5,8 @@ export interface State {
 };
 
 const initialState = {
-    selected_deal: '5c17cfec23cb4529748b0d60'
+    selected_deal: '5c16ab5167141416d0ff7efa'
+    // 5c17cfec23cb4529748b0d60
 }
 
 export function reducer(state: State = initialState, action: DealActions.Actions) {
