@@ -39,6 +39,16 @@ router.get('/API/Insert', (req, res) => {
 
 });
 
+/** GET Car deal detail */
+router.get('/API/CarDeal/:_id', (req, res) => {
+    carDeals.findOne({_id: req.params._id}, (err, result) => {
+        if(err) throw err;
+
+        res.status(200).json(result);
+    })
+});
+
+
 router.post('/API/carDeal', (req, res) => {
     const newCarDeal = new carDeals(req.body);
     newCarDeal.save((err) => {

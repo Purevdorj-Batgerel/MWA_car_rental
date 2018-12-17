@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Store, select } from '@ngrx/store';
 import {
   FormGroup,
   FormControl,
@@ -8,8 +8,12 @@ import {
 } from "@angular/forms";
 
 import { Observable } from "rxjs";
+import { take } from 'rxjs/operators';
 import { HttpService } from "../Services/http.service";
 import { ILocation } from "../models/location.model";
+import { IUser } from '../models/user.model';
+import { State } from '../reducers';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-deal',
@@ -20,29 +24,40 @@ export class CreateDealComponent implements OnInit {
   myForm: FormGroup;
 
   locations: ILocation[];
+  user$: Observable<IUser>;
+  userData: IUser;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpService,
+    private store: Store<State>,
+    private router: Router) {
+    this.user$ = this.store.pipe(select('user'));
+
+    this.user$.subscribe(val => {
+      this.userData = val;
+    })
 
     this.http.get('http://localhost:5000/api/location/getAll').subscribe(result => {
       this.locations = result;
     });
     this.myForm = this.formBuilder.group({
+      'Title': ['', Validators.required],
       'CarType': ['', [Validators.required, this.exampleValidator]],
-      'Departure': ['', [Validators.required]],
+      'Departure': ['', Validators.required],
       'Destination': ['', Validators.required],
       'Date': ['', [Validators.required, Validators.pattern('^\\d{4}(\\-|\\/|\\.)\\d{1,2}\\1\\d{1,2}$')]],
       'number': ['', Validators.required],
     });
-
-    this.myForm.valueChanges.subscribe(
-      (data: any) => console.log(data)
-    );
   }
 
   ngOnInit() { }
 
   onSubmit() {
+
     let data = {
+      tittle: this.myForm.value.Title,
+      username: this.userData.name,
       dealtype: this.myForm.value.CarType,
       fromlocation: {
         locationname: this.myForm.value.Departure,
@@ -56,10 +71,9 @@ export class CreateDealComponent implements OnInit {
       status: "New"
     };
 
-    console.log(this.myForm.value);
-
     this.http.post('http://localhost:5000/API/carDeal', data).subscribe(res => {
       console.log(res);
+      this.router.navigate(['/']);
     })
   }
 
@@ -79,21 +93,6 @@ export class CreateDealComponent implements OnInit {
       return { example: true };
     }
     return null;
-  }
-
-  asyncExampleValidator(control: FormControl): Promise<any> | Observable<any> {
-    const promise = new Promise<any>(
-      (resolve, reject) => {
-        setTimeout(() => {
-          if (control.value === 'Example') {
-            resolve({ 'invalid': true });
-          } else {
-            resolve(null);
-          }
-        }, 3000);
-      }
-    );
-    return promise;
   }
 }
 
