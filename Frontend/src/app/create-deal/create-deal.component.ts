@@ -38,7 +38,7 @@ export class CreateDealComponent implements OnInit {
       this.userData = val;
     })
 
-    this.http.get('http://localhost:5000/api/location/getAll').subscribe(result => {
+    this.http.get('http://localhost:5000/API/location/getAll').subscribe(result => {
       this.locations = result;
     });
     this.myForm = this.formBuilder.group({
@@ -54,7 +54,6 @@ export class CreateDealComponent implements OnInit {
   ngOnInit() { }
 
   onSubmit() {
-
     let data = {
       tittle: this.myForm.value.Title,
       username: this.userData.name,

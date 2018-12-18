@@ -11,5 +11,4 @@ export class DealOfferHisComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

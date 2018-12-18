@@ -30,13 +30,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.http.post('http://localhost:5000/api/user/login', this.loginForm.value).subscribe(result => {
+    this.http.post('http://localhost:5000/API/user/login', this.loginForm.value).subscribe(result => {
 
       if (result.success == true) {
         window.localStorage.setItem('token', result.token);
 
         const name = "test"; //get from token
-        let userType = "driver";
+        let userType = "user";
         this.store.dispatch(new UserActions.Login({
           name,
           userType
