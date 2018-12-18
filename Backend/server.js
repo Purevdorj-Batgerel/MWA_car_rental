@@ -46,10 +46,9 @@ app.use('/API/user', require('./routes/user'));
 app.use("/", require('./routes/carDeal'));
 app.use("/API/location", require('./routes/location'));
 
-app.post('/test', (req, res) => {
-    res.json({
-        "test": "OK"
-    });
+/** PASS SPA HTML */
+app.get('*', function (req, res) {
+    res.sendFile(path.resolve(__dirname, 'public','index.html'));
 });
 
 /** Error Handling */
