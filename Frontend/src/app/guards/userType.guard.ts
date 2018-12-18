@@ -9,21 +9,24 @@ import { IUser } from '../models/user.model';
 @Injectable()
 export class UserTypeGuard implements CanActivate {
     user$: Observable<IUser>;
+    user;
 
     constructor(
         private router: Router,
         private store: Store<State>
     ) {
         this.user$ = this.store.pipe(select('user'));
+
+        this.user$.subscribe((user) =>{
+          this.user = user;
+        })
+
     }
 
     canActivate(
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-
-        //if drive
-
-        // console.log(next, state);
+      
         return true;
     }
 }
