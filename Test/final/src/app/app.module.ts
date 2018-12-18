@@ -1,42 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
-// Import our Routes file
-import { myRoutes } from "./app.routes";
-import { HomeComponent } from './home.component';
-import { AboutusComponent } from './aboutus.component';
-import { ParamComponent } from './params/param.component';
-import { QueryComponent } from './params/query.component';
-import { FragmentComponent } from './params/fragment.component';
-import { ParentComponent } from './parentchild/parent.component';
-import { ChildComponent } from './parentchild/child.component';
-import { GuardsComponent } from './guards/guards.component';
-
-import { MyCanActivateGuard } from "./guards/mycanactivate.guard";
-import { MyCanDeactivateGuard } from "./guards/mycandeactivate.guard";
+import { TutorialComponent } from './tutorial.component';
+import { reducer } from './redux/tutorial.reducer';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutusComponent,
-    ParamComponent,
-    QueryComponent,
-    FragmentComponent,
-    ParentComponent,
-    ChildComponent,
-    GuardsComponent
+    TutorialComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    myRoutes // add it to imports
+    StoreModule.forRoot({ tutorial: reducer })
   ],
-  providers: [MyCanActivateGuard, MyCanDeactivateGuard],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

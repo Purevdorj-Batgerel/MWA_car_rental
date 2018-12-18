@@ -18,9 +18,9 @@ export class DealsearchComponent implements OnInit {
   cardealList: IDeal[];
   locations;
 
-  typeParam: String = 'All';
-  fromLocationParam: String = 'All';
-  toLocationParam: String = 'All';
+  typeParam: String = '0';
+  fromLocationParam: String = '0';
+  toLocationParam: String = '0';
   errorMsg: String = '';
 
   constructor(private carDealService: CardealService,
@@ -44,7 +44,7 @@ export class DealsearchComponent implements OnInit {
       locationto: this.toLocationParam
     };
 
-    this.carDealService.getCarDealList(params).subscribe(data => {
+    this.carDealService.getCarDealList(params).subscribe((data:any[]) => {
 
       if (data.length == 0) { this.errorMsg = 'Data was not found'; }
       else {

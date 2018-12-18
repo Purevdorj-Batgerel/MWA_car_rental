@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>Your Offer History</h2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <table class="table table-bordered" style="border: 1px solid black">
+        <thead>
+          <tr>
+            <th>Purpose</th>
+            <th style="width: 300px">Title</th>
+            <th>Departure</th>
+            <th>Destination</th>
+            <th>DepartDate</th>
+            <th>Deal Status</th>
+            <th>Offer Price</th>
+            <th>Confirm</th>
+   
+          </tr>
+        </thead>
+        <tbody *ngFor="let carDeal of carDealsList">
+          <tr>
+            <td>
+              {{carDeal.dealtype}}
+            </td>
+            <td>{{carDeal.tittle}}</td>
+            <td>{{carDeal.fromlocation.locationname}}</td>
+            <td>{{carDeal.tolocation.locationname}}</td>
+            <td>{{carDeal.departureDate | date:'MM/dd/yyyy'}}</td>
+            <td>{{carDeal.status}}</td>
+            <td>{{carDeal.bids.offerCost}}</td>
+            <td>{{carDeal.bids.isConfirmed}}</td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
