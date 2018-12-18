@@ -29,7 +29,7 @@
             <td>{{carDeal.tolocation.locationname}}</td>
             <td>{{carDeal.departureDate | date:'MM/dd/yyyy'}}</td>
             <td>{{carDeal.bids.length}}</td>
-            <td>{{carDeal.createdDate | date:'MM/dd/yyyy'}} <a class="nav-link" [routerLink]="['../deal-detail', carDeal._id]">Create Deal</a></td>
+            <td>{{carDeal.createdDate | date:'MM/dd/yyyy'}} <a class="nav-link" [routerLink]="['../deal-detail', carDeal._id]">Deal Detail</a></td>
         </tbody>
       </table>
     </div>

@@ -7,6 +7,7 @@ import { State as DealState } from '../reducers/deal.reducer';
 
 import { ViewChild } from '@angular/core';
 import { } from 'google-maps';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-deal-detail',
@@ -20,12 +21,13 @@ export class DealDetailComponent implements OnInit {
   carDeal: IDeal;
   deal: DealState;
 
-  constructor(private http: HttpService, private store: Store<State>) {
-    this.store.pipe(select('deal')).subscribe(value => this.deal = value);
-    this.http.get(`http://localhost:5000/API/CarDeal/${this.deal.selected_deal}`).subscribe(result => {
-      this.carDeal = result;
-      console.log(this.carDeal);
-    })
+  constructor(private http: HttpService, private store: Store<State>, private route: ActivatedRoute) {
+    // this.store.pipe(select('deal')).subscribe(value => this.deal = value);
+    this.route.params.subscribe(params => {
+      this.http.get(`http://localhost:5000/API/CarDeal/${params.id}`).subscribe(result => {
+        this.carDeal = result;
+      })
+    });
   }
 
   ngOnInit() {
