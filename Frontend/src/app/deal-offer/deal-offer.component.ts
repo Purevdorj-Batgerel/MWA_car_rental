@@ -12,8 +12,7 @@ import { isNumber } from 'util';
   templateUrl: './deal-offer.component.html',
   styleUrls: ['./deal-offer.component.css']
 })
-export class DealOfferComponent  implements OnInit{
-
+export class DealOfferComponent implements OnInit {
   @ViewChild('offerprice') OfferPrice: Number = 0;
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
@@ -24,10 +23,8 @@ export class DealOfferComponent  implements OnInit{
   dealID: String;
   msg: String;
 
-
   constructor(private dealstranfer: DealtransferService, private carDealService: CardealService, private store: Store<State>) {
-   
-    this.msg = '' ; 
+    this.msg = '';
     this.store.pipe(select('user')).subscribe(value => {
       this.username = value.name;
     });
@@ -38,30 +35,26 @@ export class DealOfferComponent  implements OnInit{
         this.dealDetail = result;
       })
     });
-
   }
 
-
   onSendOffer(price) {
-
     console.log(price.value);
-  
-    if (price.value === '' || isNumber(price.value)){
-      this.msg = 'Please input offer price'; 
+
+    if (price.value === '' || isNumber(price.value)) {
+      this.msg = 'Please input offer price';
       return;
     }
 
     let bid = {
       _id: this.dealID,
-       diverID: this.username,
+      diverID: this.username,
       driverName: this.username,
-       offerCost: price.value
-      }
+      offerCost: price.value
+    }
 
-      this.carDealService.carDealOffer(bid).subscribe(data => {
-        this.msg = 'Your offer was send'; 
-     });
-
+    this.carDealService.carDealOffer(bid).subscribe(data => {
+      this.msg = 'Your offer was send';
+    });
   }
 
   ngOnInit() {
@@ -72,5 +65,4 @@ export class DealOfferComponent  implements OnInit{
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
   }
-
 }

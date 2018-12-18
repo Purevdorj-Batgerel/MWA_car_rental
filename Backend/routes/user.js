@@ -34,13 +34,20 @@ router.post('/login', (req, res, next) => {
                             test: true
                         };
 
+                        const user = {
+                            name: "HuuThai ",
+                            userType: "driver"
+                        }
+
                         jwt.sign(payload, JWTSecret, {
                             expiresIn: 3600
                         }, (err, token) => {
                             if (err) throw err;
                             res.json({
                                 success: true,
-                                token: token
+                                token: token,
+                                name: user.name,
+                                userType: user.userType
                             });
                         })
 //                     } else {
