@@ -20,8 +20,6 @@ export class DealOfferHisComponent implements OnInit {
 
       let driver: any = { 'drivername': result.name};
 
-      console.log(driver);
-
       this.carDealService.getOfferHistory(driver).subscribe(data => {
         console.log(data);
         this.carDealsList = data;
