@@ -5,6 +5,7 @@ import {
   createSelector,
   MetaReducer
 } from '@ngrx/store';
+import { localStorageSync } from 'ngrx-store-localstorage';
 
 import * as userReducer from './user.reducer';
 import * as dealReducer from './deal.reducer';
@@ -21,5 +22,11 @@ export const reducers: ActionReducerMap<State> = {
   deal: dealReducer.reducer
 };
 
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({
+    keys: ['user'],
+    rehydrate: true
+  })(reducer);
+}
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<State>[] = !environment.production ? [localStorageSyncReducer] : [localStorageSyncReducer];

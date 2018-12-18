@@ -20,7 +20,7 @@ import { LogoutComponent } from './logout/logout.component';
 
 import { HttpService } from './services/http.service';
 
-import { reducers } from './reducers';
+import { reducers, metaReducers } from './reducers';
 import { AuthGuard } from './guards/auth.guard';
 import { UserTypeGuard } from './guards/userType.guard';
 import { TokenInterceptor } from './services/token.interceptor';
@@ -49,9 +49,9 @@ import { DealLazyModule } from './lazy/DealLazy.module';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers, { metaReducers }),
     StoreDevtoolsModule.instrument({
-      maxAge: 10, // Retains last 25 states
+      maxAge: 10, // Retains last 10 states
     })
   ],
   providers: [
