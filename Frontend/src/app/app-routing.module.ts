@@ -18,6 +18,7 @@ import { DealOfferHisComponent } from './deal-offer-his/deal-offer-his.component
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'deal-create', component: CreateDealComponent, canActivate: [AuthGuard, UserTypeGuard] },
+  // { path: 'deal-create', loadChildren: './lazy/DealLazy.module#DealLazyModule', canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'deal-history', component: DealHistoryComponent, canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'deal-detail/:id', component: DealDetailComponent, canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'deal-search', component: DealsearchComponent, canActivate: [AuthGuard, UserTypeGuard] },

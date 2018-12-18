@@ -27,6 +27,9 @@ import { TokenInterceptor } from './services/token.interceptor';
 import { TestComponent } from './test/test.component';
 import { DealOfferHisComponent } from './deal-offer-his/deal-offer-his.component';
 
+import { DealLazyModule } from './lazy/DealLazy.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
