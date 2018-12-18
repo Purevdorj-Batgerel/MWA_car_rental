@@ -1,15 +1,12 @@
-<div class="container" >
-
-
+<div class="container">
   <div class="panel-group" class="card h-center" style="width: 600px;">
     <div class="card-body">
       <h4>Car Rental Register</h4>
-
       <div>
         <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label class="col-sm-4 col-form-label">Title:</label>
-            <input class="col-sm-8" type="text" formControlName="Title" placeholder="Enter Titles"/>
+            <input class="col-sm-8" type="text" formControlName="Title" placeholder="Enter Titles" />
           </div>
 
           <div class="form-group">
@@ -45,14 +42,11 @@
 
           <div class="form-group">
             <label class="col-sm-4 col-form-label">Departure Date:</label>
-
             <input type="date" formControlName="Date" class="col-sm-8">
           </div>
 
           <div class="form-group">
             <label class="col-sm-4 col-form-label">Phone-Number:</label>
-
-
             <input type="tel" formControlName="number" class="col-sm-8" />
           </div>
 
@@ -63,6 +57,5 @@
         </form>
       </div>
     </div>
-
   </div>
 </div>

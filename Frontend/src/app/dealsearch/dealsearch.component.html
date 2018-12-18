@@ -1,47 +1,38 @@
 <div class="container">
-
-
   <div class="panel-group">
     <div class="panel panel-primary">
       <div class="panel-body">Car Rental Search</div>
     </div>
     <div class="panel panel-default">
       <div class="panel-body">
-       
-          <div class="row" style="margin-bottom: 5px">
-            <div class="col-md-3">
-              <select  class="form-control" (change)="onchangetype($event)">
-                <option value="0">All</option>
-                <option value="Travel">Travel</option>
-                <option value="Cargo">Cargo</option>
-                <option value="Business">Business
-              </select>
-            </div>
-            <div class="col-md-3">
-              <select  class="form-control" (change)="onchangeFrom($event)">
-                <option value="0">All</option>
-                <option *ngFor="let location of locations" value={{location.name}}>{{location.name}}</option>
-              </select>
-            </div>
-            <div class="col-md-3">
-              <select  class="form-control" (change)="onchangeTo($event)">
-                <option value="0">All</option>
-                <option *ngFor="let location of locations" value={{location.name}}>{{location.name}}</option>
-              </select>
-            </div>
-            <div class="col-md-3">
-              <button type="button"  class=" btn btn-primary" (click)="onSearch()" >
-                Search
-              </button>
-            </div>
+        <div class="row" style="margin: 5px">
+          <div class="col-md-3">
+            <select class="form-control" (change)="onchangetype($event)">
+              <option value="">All</option>
+              <option value="Travel">Travel</option>
+              <option value="Cargo">Cargo</option>
+              <option value="Business">Business
+            </select>
           </div>
-          
-        <div class="row">
-            <div class="col-md-12" style="color: red"> {{errorMsg}}</div>
+          <div class="col-md-3">
+            <select class="form-control" (change)="onchangeFrom($event)">
+              <option value="">All</option>
+              <option *ngFor="let location of locations" value={{location.name}}>{{location.name}}</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" (change)="onchangeTo($event)">
+              <option value="">All</option>
+              <option *ngFor="let location of locations" value={{location.name}}>{{location.name}}</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class=" btn btn-primary" (click)="onSearch()">
+              Search
+            </button>
+          </div>
         </div>
-
-        <div class="row" *ngIf="cardealList">
-          <div class="col-md-12">
+        <div class="row" style="margin: 5px">
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -66,14 +57,12 @@
                 <td>{{post.createdDate | date:'MM/dd/yyyy'}}</td>
                 <td>
                   <button value={{post._id}} (click)="onOffer($event)">offer</button>
-                
                 </td>
               </tr>
-            </tbody>`
+            </tbody>
           </table>
         </div>
-        </div>
-
+        <<<<<<< HEAD </div>=======>>>>>>> 2751837b4f2f1cb9711f0aab0f7fc57ee51a00c1
       </div>
     </div>
   </div>
