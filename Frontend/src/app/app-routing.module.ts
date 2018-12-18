@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'deal-history', component: DealHistoryComponent, canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'deal-detail/:id', component: DealDetailComponent, canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'deal-search', component: DealsearchComponent, canActivate: [AuthGuard, UserTypeGuard] },
-  { path: 'deal-offer', component: DealOfferComponent}, // , canActivate: [AuthGuard, UserTypeGuard] },
+  { path: 'deal-offer', component: DealOfferComponent }, // , canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: '**', redirectTo: '/' }

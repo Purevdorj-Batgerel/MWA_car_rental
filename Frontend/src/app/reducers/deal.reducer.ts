@@ -5,7 +5,7 @@ export interface State {
 };
 
 const initialState = {
-    selected_deal: '5c16ab5167141416d0ff7efa'
+    selected_deal: ''
     // 5c17cfec23cb4529748b0d60
 }
 
