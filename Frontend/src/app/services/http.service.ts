@@ -15,4 +15,8 @@ export class HttpService {
     post(url, data, option = {}): Observable<any> {
         return this.http.post(url, data, option);
     }
+
+    patch(url, data, option = {}): Observable<any> {
+        return this.http.patch(url, data, option);
+    }
 }

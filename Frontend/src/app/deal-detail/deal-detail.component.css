@@ -1,9 +1,9 @@
 .glyphicon-refresh-animate {
-  -animation: spin .7s infinite linear;
-  -webkit-animation: spin2 .7s infinite linear;
+  animation: spin .7s infinite linear;
+  -webkit-animation: spin .7s infinite linear;
 }
 
-@-webkit-keyframes spin2 {
+@-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
   }
@@ -25,4 +25,8 @@
 
 .row {
   margin-bottom: 10px;
+}
+
+.selectedRow {
+  background: #98d398;
 }

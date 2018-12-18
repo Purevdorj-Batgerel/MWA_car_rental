@@ -12,7 +12,7 @@ import { isNumber } from 'util';
   templateUrl: './deal-offer.component.html',
   styleUrls: ['./deal-offer.component.css']
 })
-export class DealOfferComponent implements OnInit {
+export class DealOfferComponent {
   @ViewChild('offerprice') OfferPrice: Number = 0;
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
@@ -23,7 +23,7 @@ export class DealOfferComponent implements OnInit {
   dealID: String;
   msg: String;
 
-  constructor(private dealstranfer: DealtransferService, private carDealService: CardealService, private store: Store<State>) {
+  constructor(private carDealService: CardealService, private store: Store<State>) {
     this.msg = '';
     this.store.pipe(select('user')).subscribe(value => {
       this.username = value.name;
@@ -33,6 +33,13 @@ export class DealOfferComponent implements OnInit {
       this.dealID = value.selected_deal;
       this.carDealService.getDealDetail(value.selected_deal).subscribe((result: IDeal) => {
         this.dealDetail = result;
+
+        const mapProp = {
+          center: new google.maps.LatLng(this.dealDetail.fromlocation.coordinate.x, this.dealDetail.fromlocation.coordinate.y),
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
       })
     });
   }
@@ -40,7 +47,7 @@ export class DealOfferComponent implements OnInit {
   onSendOffer(price) {
     console.log(price.value);
 
-    if (price.value === '' || isNumber(price.value)) {
+    if (price.value === '' || isNaN(Number(price.value))) {
       this.msg = 'Please input offer price';
       return;
     }
@@ -55,14 +62,5 @@ export class DealOfferComponent implements OnInit {
     this.carDealService.carDealOffer(bid).subscribe(data => {
       this.msg = 'Your offer was send';
     });
-  }
-
-  ngOnInit() {
-    const mapProp = {
-      center: new google.maps.LatLng(18.5793, 73.8143),
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
   }
 }

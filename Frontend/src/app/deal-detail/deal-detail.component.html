@@ -37,10 +37,10 @@
       <div class="row">
         <h4>Driver Offers</h4>
       </div>
-      <div class="row" *ngFor="let offer of carDeal.bids">
+      <div class="row" *ngFor="let offer of carDeal.bids" [class.selectedRow]="offer.isConfirmed" >
         <div class="col">{{offer.driverName}}</div>
         <div class="col">{{offer.offerCost}}</div>
-        <div class="col"><button class="btn btn-primary">Confirm</button></div>
+        <div class="col" *ngIf="carDeal.status=='New'"><button class="btn btn-primary" attr.btnid="{{offer._id}}" (click)="onClick($event)">Confirm</button></div>
       </div>
     </div>
 

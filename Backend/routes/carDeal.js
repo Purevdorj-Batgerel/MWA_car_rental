@@ -33,7 +33,7 @@ router.patch('/API/OfferCost', (req, res) => {
             driverName: ojb.driverName,
             offerCost: ojb.offerCost,
             biddingDate: new Date(),
-            isConfirmed: "Not yet"
+            isConfirmed: false
         }
 
         data.bids.push(bid);
@@ -43,6 +43,14 @@ router.patch('/API/OfferCost', (req, res) => {
                 success: "Offer was updated"
             });
         });
+    })
+});
+router.patch('/API/Offer/Confirm/:offerID', (req, res) => {
+    console.log("GG", req.params.offerID);
+    carDeals.findOneAndUpdate({"bids._id":req.params.offerID}, {$set: {"status": "Confirmed", "bids.$.isConfirmed": true}}, (err, result)=>{
+        if(err) throw err;
+
+        res.json(result);
     })
 });
 
@@ -117,7 +125,7 @@ router.post('/API/OfferHistory', (req, res) => {
             }
         }])
         .exec((err, data) => {
-            if(err) throw err;
+            if (err) throw err;
             res.json(data);
         });
 });

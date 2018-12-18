@@ -35,8 +35,8 @@ router.post('/login', (req, res, next) => {
                         };
 
                         const user = {
-                            name: "HuuThai ",
-                            userType: "driver"
+                            name: "test user",
+                            userType: "user"
                         }
 
                         jwt.sign(payload, JWTSecret, {

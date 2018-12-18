@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './deal-detail.component.html',
   styleUrls: ['./deal-detail.component.css']
 })
-export class DealDetailComponent implements OnInit {
+export class DealDetailComponent {
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
 
@@ -26,16 +26,22 @@ export class DealDetailComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.http.get(`http://localhost:5000/API/CarDeal/${params.id}`).subscribe(result => {
         this.carDeal = result;
+
+        const mapProp = {
+          center: new google.maps.LatLng(this.carDeal.fromlocation.coordinate.x, this.carDeal.fromlocation.coordinate.y),
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
       })
     });
   }
 
-  ngOnInit() {
-    const mapProp = {
-      center: new google.maps.LatLng(18.5793, 73.8143),
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+  onClick(event) {
+    const offerId = event.target.getAttribute("btnid");
+    this.http.patch(`http://localhost:5000/API/Offer/Confirm/${offerId}`, {}).subscribe(result => {
+      console.log(result);
+      this.carDeal = result;
+    })
   }
 }
