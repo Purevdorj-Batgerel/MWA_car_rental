@@ -22,4 +22,8 @@ export class CardealService {
   getDealDetail(reqID: string) {
     return this.http.get('http://localhost:5000/API/CarDeal/' + reqID);
   }
+
+  getOfferHistory(username: string) {
+    return this.http.post('http://localhost:5000/API/OfferHistory', username);
+  }
 }

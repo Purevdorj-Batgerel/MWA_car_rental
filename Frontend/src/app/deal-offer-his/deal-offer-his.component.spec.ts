@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DealOfferHisComponent } from './deal-offer-his.component';
+import { DealOfferHisComponent } from './deal-offer-his/deal-offer-his.component';
 
 describe('DealOfferHisComponent', () => {
   let component: DealOfferHisComponent;

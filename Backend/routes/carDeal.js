@@ -4,54 +4,6 @@ const router = express.Router();
 const carDeals = require('../models/CarDeals');
 
 
-router.get('/API/Insert', (req, res) => {
-    var test = new carDeals({
-        tittle: "I need travel to Texas",
-        username: "Huu Thai",
-        dealtype: "Travel",
-        fromlocation: {
-            "locationname": "Fairfield",
-            coordinate: {
-                x: 41.013415,
-                y: -91.962262
-            }
-        },
-        tolocation: {
-            "locationname": "Chicago",
-            coordinate: {
-                x: 41.973883,
-                y: -87.906388
-            }
-        },
-        departureDate: new Date(2019, 01, 30),
-        bids: [{
-                diverID: "0001",
-                driverName: "Huu Thai Ho",
-                offerCost: 200,
-                biddingDate: new Date(),
-                isConfirmed: 0
-            },
-            {
-                diverID: "0002",
-                driverName: "Yafei",
-                offerCost: 180,
-                biddingDate: new Date(),
-                isConfirmed: 0
-            }
-        ],
-        status: "New Deal"
-    });
-
-    test.save((err) => {
-
-        if (err) console.log(err);
-        res.json({
-            success: true
-        });
-    })
-
-});
-
 /** GET Car deal detail */
 router.get('/API/CarDeal/:_id', (req, res) => {
     carDeals.findOne({
@@ -84,7 +36,7 @@ router.patch('/API/OfferCost', (req, res) => {
             driverName: ojb.driverName,
             offerCost: ojb.offerCost,
             biddingDate: new Date(),
-            isConfirmed: 0
+            isConfirmed: "Not yet"
         }
 
         data.bids.push(bid);
@@ -138,35 +90,37 @@ router.get('/API/dealdetail/:id', (req, res) => {
 router.post('/API/CarDealSearch', (req, res) => {
     // var recentDate = new Date();
     const param = req.body;
-    let searchParam = '';
+    let searchParam = {};
 
-    if (param.dealtype != 'All') {
-        searchParam += '1';
+    if (param.dealtype != '0') {
+        searchParam.dealtype =  param.dealtype;
     }
-    if (param.locationfrom != 'All') {
-        searchParam += '2';
+    if (param.locationfrom != '0') {
+       
+        searchParam["fromlocation.locationname"] = param.locationfrom;
     }
-    if (param.locationto != 'All') {
-        searchParam += '3';
+    if (param.locationto != '0') {
+        
+        searchParam["tolocation.locationname"] = param.locationto;
     }
 
-    carDeals.find()
-        .where('dealtype').equals(param.dealtype)
-        .where('fromlocation.locationname').equals(param.locationfrom)
-        .where('tolocation.locationname').equals(param.locationto)
-        .sort({
-            createdDate: 1
-        })
-        .exec((err, data) => {
-            res.json(data);
-        })
-
+    console.log();
+    carDeals.find(searchParam)
+            .sort({ createdDate: 1 })
+            .exec((err, data) => {
+                res.json(data);
+            })
 });
 
-router.get('/API/Search', (req, res) => {
-    res.json({
-        success: true
-    });
+// Get Offer List of specific driver
+router.post('/API/OfferHistory', (req, res) => {
+  
+    const param = req.body;
+    console.log();
+    carDeals.aggregate([{ "$unwind": "$bids"},{"$match" : {"bids.driverName":param.drivername}}])
+            .exec((err, data) => {
+             res.json(data);
+             });
 });
 
 module.exports = router;

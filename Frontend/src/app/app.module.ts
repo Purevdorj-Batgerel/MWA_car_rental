@@ -25,7 +25,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { UserTypeGuard } from './guards/userType.guard';
 import { TokenInterceptor } from './services/token.interceptor';
 import { TestComponent } from './test/test.component';
-import { DealOfferHisComponent } from './deal-offer-his/deal-offer-his/deal-offer-his.component';
+import { DealOfferHisComponent } from './deal-offer-his/deal-offer-his.component';
 
 @NgModule({
   declarations: [
