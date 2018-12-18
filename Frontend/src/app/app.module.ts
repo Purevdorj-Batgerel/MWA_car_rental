@@ -16,6 +16,7 @@ import { DealDetailComponent } from './deal-detail/deal-detail.component';
 import { DealsearchComponent } from './dealsearch/dealsearch.component';
 import { DealOfferComponent } from './deal-offer/deal-offer.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 import { HttpService } from './services/http.service';
 
@@ -36,6 +37,7 @@ import { DealOfferHisComponent } from './deal-offer-his/deal-offer-his/deal-offe
     DealsearchComponent,
     DealOfferComponent,
     LoginComponent,
+    LogoutComponent,
     TestComponent,
     DealOfferHisComponent
   ],

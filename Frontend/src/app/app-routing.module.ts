@@ -9,6 +9,7 @@ import { DealDetailComponent } from './deal-detail/deal-detail.component';
 import { DealsearchComponent } from './dealsearch/dealsearch.component';
 import { DealOfferComponent } from './deal-offer/deal-offer.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 import { AuthGuard } from './guards/auth.guard';
 import { UserTypeGuard } from './guards/userType.guard';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'deal-search', component: DealsearchComponent, canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'deal-offer', component: DealOfferComponent}, // , canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: '**', redirectTo: '/' }
 ];
 

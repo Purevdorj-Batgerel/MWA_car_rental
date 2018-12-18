@@ -15,7 +15,8 @@ export function reducer(state: IUser = initialState, action: UserActions.Actions
     switch (action.type) {
         case UserActions.LOGIN:
             return Object.assign({}, state, action.payload);
-
+        case UserActions.LOGOUT:
+            return { name: "", userType: "" };
         default:
             return state;
     }
