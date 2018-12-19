@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  errMessage: string;
 
   //Store - Redux's store
   constructor(private router: Router, private http: HttpService, private formBuilder: FormBuilder, private store: Store<State>) {
@@ -30,23 +31,25 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.http.post('http://localhost:5000/API/user/login', this.loginForm.value).subscribe(result => {
+    this.http.post('http://localhost:5000/API/user/login', this.loginForm.value).subscribe(
+      result => {
+        if (result.success == true) {
+          window.localStorage.setItem('token', result.token);
 
-      if (result.success == true) {
-        window.localStorage.setItem('token', result.token);
+          const { name, userType } = result;
+          this.store.dispatch(new UserActions.Login({
+            name,
+            userType
+          }))
 
-        const { name, userType } = result;
-        this.store.dispatch(new UserActions.Login({
-          name,
-          userType
-        }))
-
-        if (userType == 'driver') {
-          this.router.navigate(['deal-search']);
-        } else {
-          this.router.navigate(['deal-history']);
+          if (userType == 'driver') {
+            this.router.navigate(['deal-search']);
+          } else {
+            this.router.navigate(['deal-history']);
+          }
         }
-      }
-    });
+      }, err => {
+        this.errMessage = err.error.message;
+      });
   }
 }
