@@ -94,16 +94,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _create_deal_create_deal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./create-deal/create-deal.component */ "./src/app/create-deal/create-deal.component.ts");
-/* harmony import */ var _deal_history_deal_history_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./deal-history/deal-history.component */ "./src/app/deal-history/deal-history.component.ts");
-/* harmony import */ var _deal_detail_deal_detail_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./deal-detail/deal-detail.component */ "./src/app/deal-detail/deal-detail.component.ts");
-/* harmony import */ var _dealsearch_dealsearch_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dealsearch/dealsearch.component */ "./src/app/dealsearch/dealsearch.component.ts");
-/* harmony import */ var _deal_offer_deal_offer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./deal-offer/deal-offer.component */ "./src/app/deal-offer/deal-offer.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _logout_logout_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./logout/logout.component */ "./src/app/logout/logout.component.ts");
-/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
-/* harmony import */ var _guards_userType_guard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./guards/userType.guard */ "./src/app/guards/userType.guard.ts");
-/* harmony import */ var _deal_offer_his_deal_offer_his_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./deal-offer-his/deal-offer-his.component */ "./src/app/deal-offer-his/deal-offer-his.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _create_deal_create_deal_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./create-deal/create-deal.component */ "./src/app/create-deal/create-deal.component.ts");
+/* harmony import */ var _deal_history_deal_history_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./deal-history/deal-history.component */ "./src/app/deal-history/deal-history.component.ts");
+/* harmony import */ var _deal_detail_deal_detail_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./deal-detail/deal-detail.component */ "./src/app/deal-detail/deal-detail.component.ts");
+/* harmony import */ var _dealsearch_dealsearch_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./dealsearch/dealsearch.component */ "./src/app/dealsearch/dealsearch.component.ts");
+/* harmony import */ var _deal_offer_deal_offer_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./deal-offer/deal-offer.component */ "./src/app/deal-offer/deal-offer.component.ts");
+/* harmony import */ var _signup_signup_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./signup/signup.component */ "./src/app/signup/signup.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _logout_logout_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./logout/logout.component */ "./src/app/logout/logout.component.ts");
+/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
+/* harmony import */ var _guards_userType_guard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./guards/userType.guard */ "./src/app/guards/userType.guard.ts");
+/* harmony import */ var _deal_offer_his_deal_offer_his_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./deal-offer-his/deal-offer-his.component */ "./src/app/deal-offer-his/deal-offer-his.component.ts");
+
+
 
 
 
@@ -118,16 +122,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'deal-create', component: _create_deal_create_deal_component__WEBPACK_IMPORTED_MODULE_3__["CreateDealComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_11__["UserTypeGuard"]] },
+    { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
+    { path: 'deal-create', component: _create_deal_create_deal_component__WEBPACK_IMPORTED_MODULE_4__["CreateDealComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_13__["UserTypeGuard"]] },
     // { path: 'deal-create', loadChildren: './lazy/DealLazy.module#DealLazyModule', canActivate: [AuthGuard, UserTypeGuard] },
-    { path: 'deal-history', component: _deal_history_deal_history_component__WEBPACK_IMPORTED_MODULE_4__["DealHistoryComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_11__["UserTypeGuard"]] },
-    { path: 'deal-detail/:id', component: _deal_detail_deal_detail_component__WEBPACK_IMPORTED_MODULE_5__["DealDetailComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_11__["UserTypeGuard"]] },
-    { path: 'deal-search', component: _dealsearch_dealsearch_component__WEBPACK_IMPORTED_MODULE_6__["DealsearchComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_11__["UserTypeGuard"]] },
-    { path: 'deal-offer-his', component: _deal_offer_his_deal_offer_his_component__WEBPACK_IMPORTED_MODULE_12__["DealOfferHisComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_11__["UserTypeGuard"]] },
-    { path: 'deal-offer', component: _deal_offer_deal_offer_component__WEBPACK_IMPORTED_MODULE_7__["DealOfferComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_11__["UserTypeGuard"]] },
-    { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"] },
-    { path: 'logout', component: _logout_logout_component__WEBPACK_IMPORTED_MODULE_9__["LogoutComponent"] },
+    { path: 'deal-history', component: _deal_history_deal_history_component__WEBPACK_IMPORTED_MODULE_5__["DealHistoryComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_13__["UserTypeGuard"]] },
+    { path: 'deal-detail/:id', component: _deal_detail_deal_detail_component__WEBPACK_IMPORTED_MODULE_6__["DealDetailComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_13__["UserTypeGuard"]] },
+    { path: 'deal-search', component: _dealsearch_dealsearch_component__WEBPACK_IMPORTED_MODULE_7__["DealsearchComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_13__["UserTypeGuard"]] },
+    { path: 'deal-offer-his', component: _deal_offer_his_deal_offer_his_component__WEBPACK_IMPORTED_MODULE_14__["DealOfferHisComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_13__["UserTypeGuard"]] },
+    { path: 'deal-offer', component: _deal_offer_deal_offer_component__WEBPACK_IMPORTED_MODULE_8__["DealOfferComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"], _guards_userType_guard__WEBPACK_IMPORTED_MODULE_13__["UserTypeGuard"]] },
+    { path: 'signup', component: _signup_signup_component__WEBPACK_IMPORTED_MODULE_9__["SignupComponent"] },
+    { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"] },
+    { path: 'logout', component: _logout_logout_component__WEBPACK_IMPORTED_MODULE_11__["LogoutComponent"] },
     { path: '**', redirectTo: '/' }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -164,7 +169,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\r\n<div style=\"margin-top:100px;\"></div>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<app-header></app-header>\r\n<div style=\"margin-top:56px;\"></div>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -222,21 +227,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ngrx/store-devtools */ "./node_modules/@ngrx/store-devtools/fesm5/store-devtools.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _create_deal_create_deal_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./create-deal/create-deal.component */ "./src/app/create-deal/create-deal.component.ts");
-/* harmony import */ var _deal_history_deal_history_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./deal-history/deal-history.component */ "./src/app/deal-history/deal-history.component.ts");
-/* harmony import */ var _deal_detail_deal_detail_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./deal-detail/deal-detail.component */ "./src/app/deal-detail/deal-detail.component.ts");
-/* harmony import */ var _dealsearch_dealsearch_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./dealsearch/dealsearch.component */ "./src/app/dealsearch/dealsearch.component.ts");
-/* harmony import */ var _deal_offer_deal_offer_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./deal-offer/deal-offer.component */ "./src/app/deal-offer/deal-offer.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _logout_logout_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./logout/logout.component */ "./src/app/logout/logout.component.ts");
-/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/http.service */ "./src/app/services/http.service.ts");
-/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./reducers */ "./src/app/reducers/index.ts");
-/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
-/* harmony import */ var _guards_userType_guard__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./guards/userType.guard */ "./src/app/guards/userType.guard.ts");
-/* harmony import */ var _services_token_interceptor__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./services/token.interceptor */ "./src/app/services/token.interceptor.ts");
-/* harmony import */ var _test_test_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./test/test.component */ "./src/app/test/test.component.ts");
-/* harmony import */ var _deal_offer_his_deal_offer_his_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./deal-offer-his/deal-offer-his.component */ "./src/app/deal-offer-his/deal-offer-his.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _create_deal_create_deal_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./create-deal/create-deal.component */ "./src/app/create-deal/create-deal.component.ts");
+/* harmony import */ var _deal_history_deal_history_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./deal-history/deal-history.component */ "./src/app/deal-history/deal-history.component.ts");
+/* harmony import */ var _deal_detail_deal_detail_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./deal-detail/deal-detail.component */ "./src/app/deal-detail/deal-detail.component.ts");
+/* harmony import */ var _dealsearch_dealsearch_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./dealsearch/dealsearch.component */ "./src/app/dealsearch/dealsearch.component.ts");
+/* harmony import */ var _deal_offer_deal_offer_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./deal-offer/deal-offer.component */ "./src/app/deal-offer/deal-offer.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _logout_logout_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./logout/logout.component */ "./src/app/logout/logout.component.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./reducers */ "./src/app/reducers/index.ts");
+/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
+/* harmony import */ var _guards_userType_guard__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./guards/userType.guard */ "./src/app/guards/userType.guard.ts");
+/* harmony import */ var _services_token_interceptor__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./services/token.interceptor */ "./src/app/services/token.interceptor.ts");
+/* harmony import */ var _test_test_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./test/test.component */ "./src/app/test/test.component.ts");
+/* harmony import */ var _deal_offer_his_deal_offer_his_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./deal-offer-his/deal-offer-his.component */ "./src/app/deal-offer-his/deal-offer-his.component.ts");
+/* harmony import */ var _signup_signup_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./signup/signup.component */ "./src/app/signup/signup.component.ts");
+
+
 
 
 
@@ -268,34 +277,36 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_9__["HeaderComponent"],
-                _create_deal_create_deal_component__WEBPACK_IMPORTED_MODULE_10__["CreateDealComponent"],
-                _deal_history_deal_history_component__WEBPACK_IMPORTED_MODULE_11__["DealHistoryComponent"],
-                _deal_detail_deal_detail_component__WEBPACK_IMPORTED_MODULE_12__["DealDetailComponent"],
-                _dealsearch_dealsearch_component__WEBPACK_IMPORTED_MODULE_13__["DealsearchComponent"],
-                _deal_offer_deal_offer_component__WEBPACK_IMPORTED_MODULE_14__["DealOfferComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_15__["LoginComponent"],
-                _logout_logout_component__WEBPACK_IMPORTED_MODULE_16__["LogoutComponent"],
-                _test_test_component__WEBPACK_IMPORTED_MODULE_22__["TestComponent"],
-                _deal_offer_his_deal_offer_his_component__WEBPACK_IMPORTED_MODULE_23__["DealOfferHisComponent"]
+                _header_header_component__WEBPACK_IMPORTED_MODULE_10__["HeaderComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
+                _create_deal_create_deal_component__WEBPACK_IMPORTED_MODULE_11__["CreateDealComponent"],
+                _deal_history_deal_history_component__WEBPACK_IMPORTED_MODULE_12__["DealHistoryComponent"],
+                _deal_detail_deal_detail_component__WEBPACK_IMPORTED_MODULE_13__["DealDetailComponent"],
+                _dealsearch_dealsearch_component__WEBPACK_IMPORTED_MODULE_14__["DealsearchComponent"],
+                _deal_offer_deal_offer_component__WEBPACK_IMPORTED_MODULE_15__["DealOfferComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"],
+                _logout_logout_component__WEBPACK_IMPORTED_MODULE_17__["LogoutComponent"],
+                _test_test_component__WEBPACK_IMPORTED_MODULE_23__["TestComponent"],
+                _deal_offer_his_deal_offer_his_component__WEBPACK_IMPORTED_MODULE_24__["DealOfferHisComponent"],
+                _signup_signup_component__WEBPACK_IMPORTED_MODULE_25__["SignupComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
-                _ngrx_store__WEBPACK_IMPORTED_MODULE_5__["StoreModule"].forRoot(_reducers__WEBPACK_IMPORTED_MODULE_18__["reducers"], { metaReducers: _reducers__WEBPACK_IMPORTED_MODULE_18__["metaReducers"] }),
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_5__["StoreModule"].forRoot(_reducers__WEBPACK_IMPORTED_MODULE_19__["reducers"], { metaReducers: _reducers__WEBPACK_IMPORTED_MODULE_19__["metaReducers"] }),
                 _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_6__["StoreDevtoolsModule"].instrument({
                     maxAge: 10,
                 })
             ],
             providers: [
-                _services_http_service__WEBPACK_IMPORTED_MODULE_17__["HttpService"],
-                _guards_auth_guard__WEBPACK_IMPORTED_MODULE_19__["AuthGuard"],
-                _guards_userType_guard__WEBPACK_IMPORTED_MODULE_20__["UserTypeGuard"],
+                _services_http_service__WEBPACK_IMPORTED_MODULE_18__["HttpService"],
+                _guards_auth_guard__WEBPACK_IMPORTED_MODULE_20__["AuthGuard"],
+                _guards_userType_guard__WEBPACK_IMPORTED_MODULE_21__["UserTypeGuard"],
                 {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HTTP_INTERCEPTORS"],
-                    useClass: _services_token_interceptor__WEBPACK_IMPORTED_MODULE_21__["TokenInterceptor"],
+                    useClass: _services_token_interceptor__WEBPACK_IMPORTED_MODULE_22__["TokenInterceptor"],
                     multi: true
                 }
             ],
@@ -1031,6 +1042,59 @@ var HeaderComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/home/home.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/home/home.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "img {\r\n  max-height: 500px;\r\n  width: 100%;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n}\r\n\r\n.imgContainer {\r\n    margin-bottom: 32px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLHFCQUFrQjtLQUFsQixrQkFBa0I7Q0FDbkI7O0FBRUQ7SUFDSSxvQkFBb0I7Q0FDdkIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImltZyB7XHJcbiAgbWF4LWhlaWdodDogNTAwcHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgb2JqZWN0LWZpdDogY292ZXI7XHJcbn1cclxuXHJcbi5pbWdDb250YWluZXIge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMzJweDtcclxufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.html":
+/*!******************************************!*\
+  !*** ./src/app/home/home.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1></h1>\r\n<div class=\"imgContainer\">\r\n  <img src=\"../../assets/img/action-american-car-asphalt.jpg\" alt=\"image\">\r\n</div>\r\n\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <div class=\"card mb-4 shadow-sm\">\r\n        <img class=\"card-img-top\" data-src=\"holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail\"\r\n          alt=\"Thumbnail [100%x225]\" style=\"height: 225px; width: 100%; display: block;\" src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167c4d888c8%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167c4d888c8%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.7265625%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\r\n          data-holder-rendered=\"true\">\r\n        <div class=\"card-body\">\r\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional\r\n            content. This content is a little bit longer.</p>\r\n          <div class=\"d-flex justify-content-between align-items-center\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n      <div class=\"card mb-4 shadow-sm\">\r\n        <img class=\"card-img-top\" data-src=\"holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail\"\r\n          alt=\"Thumbnail [100%x225]\" style=\"height: 225px; width: 100%; display: block;\" src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167c4d888c8%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167c4d888c8%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.7265625%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\r\n          data-holder-rendered=\"true\">\r\n        <div class=\"card-body\">\r\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional\r\n            content. This content is a little bit longer.</p>\r\n          <div class=\"d-flex justify-content-between align-items-center\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n      <div class=\"card mb-4 shadow-sm\">\r\n        <img class=\"card-img-top\" data-src=\"holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail\"\r\n          alt=\"Thumbnail [100%x225]\" style=\"height: 225px; width: 100%; display: block;\" src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167c4d888c8%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167c4d888c8%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.7265625%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\r\n          data-holder-rendered=\"true\">\r\n        <div class=\"card-body\">\r\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional\r\n            content. This content is a little bit longer.</p>\r\n          <div class=\"d-flex justify-content-between align-items-center\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/home/home.component.ts ***!
+  \****************************************/
+/*! exports provided: HomeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var HomeComponent = /** @class */ (function () {
+    function HomeComponent() {
+    }
+    HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-home',
+            template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
+            styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
+        })
+    ], HomeComponent);
+    return HomeComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/login/login.component.css":
 /*!*******************************************!*\
   !*** ./src/app/login/login.component.css ***!
@@ -1038,7 +1102,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".h-center {\r\n    margin: 0px auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtDQUNwQiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaC1jZW50ZXIge1xyXG4gICAgbWFyZ2luOiAwcHggYXV0bztcclxufSJdfQ== */"
+module.exports = ".h-center {\r\n  margin: 128px auto 0px auto;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLDRCQUE0QjtDQUM3QiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaC1jZW50ZXIge1xyXG4gIG1hcmdpbjogMTI4cHggYXV0byAwcHggYXV0bztcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -1049,7 +1113,7 @@ module.exports = ".h-center {\r\n    margin: 0px auto;\r\n}\r\n/*# sourceMapping
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"card h-center\" style=\"width: 600px;\">\r\n    <div class=\"card-body\">\r\n      <h5 class=\"card-title\">Login</h5>\r\n\r\n      <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n        <div class=\"form-group\">\r\n          <label for=\"email\">Email address</label>\r\n          <input type=\"email\" formControlName=\"email\" class=\"form-control\" id=\"email\" aria-describedby=\"emailHelp\"\r\n            placeholder=\"Enter email\">\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"password\">Password</label>\r\n          <input type=\"password\" formControlName=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Password\">\r\n        </div>\r\n\r\n        <!-- <div class=\"form-check\">\r\n              <input type=\"checkbox\" class=\"form-check-input\" id=\"remember\">\r\n              <label class=\"form-check-label\" for=\"remember\">Remember me</label>\r\n            </div> -->\r\n\r\n        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"card h-center\" style=\"width: 600px;\">\r\n    <div class=\"card-body\">\r\n      <h5 class=\"card-title\">Login</h5>\r\n\r\n      <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"errMessage\">\r\n        {{errMessage}}\r\n      </div>\r\n\r\n      <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n        <div class=\"form-group\">\r\n          <label for=\"email\">Email address</label>\r\n          <input type=\"email\" formControlName=\"email\" class=\"form-control\" id=\"email\" aria-describedby=\"emailHelp\"\r\n            placeholder=\"Enter email\">\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"password\">Password</label>\r\n          <input type=\"password\" formControlName=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Password\">\r\n        </div>\r\n\r\n        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\r\n\r\n        <div>\r\n          <p>Or<a style=\"display:inline\" class=\"nav-link\" [routerLink]=\"['../signup']\">Sign up here</a></p>\r\n        </div>\r\n      </form>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1111,6 +1175,8 @@ var LoginComponent = /** @class */ (function () {
                     _this.router.navigate(['deal-history']);
                 }
             }
+        }, function (err) {
+            _this.errMessage = err.error.message;
         });
     };
     LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1467,6 +1533,91 @@ var TokenInterceptor = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injector"]])
     ], TokenInterceptor);
     return TokenInterceptor;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/signup/signup.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/signup/signup.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".h-center {\r\n  margin: 128px auto 0px auto;\r\n}\r\n\r\n.success {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  top: 0px;\r\n  left: 0px;\r\n  z-index: 999999;\r\n  display: flex;\r\n\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  flex-direction: column;\r\n\r\n  background-color: white;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsNEJBQTRCO0NBQzdCOztBQUVEO0VBQ0UsbUJBQW1CO0VBQ25CLFlBQVk7RUFDWixhQUFhO0VBQ2IsU0FBUztFQUNULFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsY0FBYzs7RUFFZCx3QkFBd0I7RUFDeEIsb0JBQW9COztFQUVwQix1QkFBdUI7O0VBRXZCLHdCQUF3QjtDQUN6QiIsImZpbGUiOiJzcmMvYXBwL3NpZ251cC9zaWdudXAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oLWNlbnRlciB7XHJcbiAgbWFyZ2luOiAxMjhweCBhdXRvIDBweCBhdXRvO1xyXG59XHJcblxyXG4uc3VjY2VzcyB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMTAwJTtcclxuICB0b3A6IDBweDtcclxuICBsZWZ0OiAwcHg7XHJcbiAgei1pbmRleDogOTk5OTk5O1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcblxyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblxyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcblxyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/signup/signup.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/signup/signup.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n  <div class=\"card h-center\" style=\"width: 600px;\">\r\n    <div class=\"card-body\">\r\n      <h5 class=\"card-title\">Sign up</h5>\r\n\r\n      <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"errMessage\">\r\n        {{errMessage}}\r\n      </div>\r\n\r\n      <form [formGroup]=\"signupForm\" (ngSubmit)=\"onSubmit()\">\r\n        <div class=\"form-group\">\r\n          <label for=\"name\">Name</label>\r\n          <input type=\"text\" formControlName=\"name\" class=\"form-control\" id=\"name\" aria-describedby=\"nameHelp\"\r\n            placeholder=\"Enter name\">\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"email\">Email address</label>\r\n          <input type=\"email\" formControlName=\"email\" class=\"form-control\" id=\"email\" aria-describedby=\"emailHelp\"\r\n            placeholder=\"Enter email\">\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"password\">Password</label>\r\n          <input type=\"password\" formControlName=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Password\">\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"userType\">User Type</label>\r\n          <select id=\"userType\" class=\"form-control\" formControlName=\"userType\">\r\n            <option value=\"user\" selected>User</option>\r\n            <option value=\"driver\">Driver</option>\r\n          </select>\r\n        </div>\r\n\r\n        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div *ngIf=\"success\" class=\"success\">\r\n  <img src=\"https://cdn2.iconfinder.com/data/icons/greenline/512/check-128.png\" alt=\"success image\" />\r\n  <h1 class=\"display-4\">Sucessfully registered</h1>\r\n  <a style=\"display:inline\" class=\"nav-link\" [routerLink]=\"['../login']\">Login here</a>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/signup/signup.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/signup/signup.component.ts ***!
+  \********************************************/
+/*! exports provided: SignupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupComponent", function() { return SignupComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+var SignupComponent = /** @class */ (function () {
+    //Store - Redux's store
+    function SignupComponent(router, http, formBuilder) {
+        this.router = router;
+        this.http = http;
+        this.formBuilder = formBuilder;
+        this.success = false;
+        this.signupForm = this.formBuilder.group({
+            'name': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            'email': ['', [
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email
+                ]],
+            'password': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            'userType': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+        });
+    }
+    SignupComponent.prototype.ngOnInit = function () {
+    };
+    SignupComponent.prototype.onSubmit = function () {
+        var _this = this;
+        console.log(this.signupForm.value);
+        this.http.post('http://localhost:5000/API/user/signup', this.signupForm.value).subscribe(function (result) {
+            _this.success = true;
+        }, function (err) {
+            _this.errMessage = err.error.message;
+        });
+    };
+    SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-login',
+            template: __webpack_require__(/*! ./signup.component.html */ "./src/app/signup/signup.component.html"),
+            styles: [__webpack_require__(/*! ./signup.component.css */ "./src/app/signup/signup.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _services_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
+    ], SignupComponent);
+    return SignupComponent;
 }());
 
 
