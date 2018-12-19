@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 import { CreateDealComponent } from './create-deal/create-deal.component';
 import { DealHistoryComponent } from './deal-history/deal-history.component';
 import { DealDetailComponent } from './deal-detail/deal-detail.component';
@@ -17,7 +16,7 @@ import { UserTypeGuard } from './guards/userType.guard';
 import { DealOfferHisComponent } from './deal-offer-his/deal-offer-his.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'deal-create', component: CreateDealComponent, canActivate: [AuthGuard, UserTypeGuard] },
   // { path: 'deal-create', loadChildren: './lazy/DealLazy.module#DealLazyModule', canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'deal-history', component: DealHistoryComponent, canActivate: [AuthGuard, UserTypeGuard] },
@@ -25,7 +24,7 @@ const routes: Routes = [
   { path: 'deal-search', component: DealsearchComponent, canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'deal-offer-his', component: DealOfferHisComponent, canActivate: [AuthGuard, UserTypeGuard] },
   { path: 'deal-offer', component: DealOfferComponent, canActivate: [AuthGuard, UserTypeGuard] },
-  { path: 'signup', component: SignupComponent},
+  { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: '**', redirectTo: '/' }

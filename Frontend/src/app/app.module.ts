@@ -9,6 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { CreateDealComponent } from './create-deal/create-deal.component';
 import { DealHistoryComponent } from './deal-history/deal-history.component';
@@ -30,11 +31,11 @@ import { DealOfferHisComponent } from './deal-offer-his/deal-offer-his.component
 import { DealLazyModule } from './lazy/DealLazy.module';
 import { SignupComponent } from './signup/signup.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
     CreateDealComponent,
     DealHistoryComponent,
     DealDetailComponent,
